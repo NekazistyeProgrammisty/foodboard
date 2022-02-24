@@ -1,10 +1,10 @@
-# recipesWorld
+# FoodBoard
 Приложение для корреляции рецептов и продуктов
 
 ## Ссылки:
 
 #### Как идет работа над проектом (FigJam) 
-https://www.figma.com/file/W8I4rEX0X5jWv3t6muttiL/Untitled?node-id=0%3A1
+https://www.figma.com/file/W8I4rEX0X5jWv3t6muttiL/recipesWorld?node-id=27%3A769
 #### Первичная карта действий
 https://mm.tt/2067325693?t=30e6iN9Ift
 
