@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    background-color: var(--primarycolor);
+    color: var(--txtcolor);
+    font-size: var(--headertxtsize);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.text-logo {
+    margin-left: 1.5rem;
+}
