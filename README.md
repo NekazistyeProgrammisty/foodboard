@@ -3,6 +3,8 @@
 
 ## Ссылки:
 
+#### Github pages нашего сайта
+https://nekazistyeprogrammisty.github.io/foodboard/
 #### Как идет работа над проектом (FigJam) 
 https://www.figma.com/file/W8I4rEX0X5jWv3t6muttiL/recipesWorld?node-id=27%3A769
 #### Первичная карта действий
