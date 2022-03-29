@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/foodboard/static/js/main.1cc416ec.js",
+    "index.html": "/foodboard/index.html",
+    "main.1cc416ec.js.map": "/foodboard/static/js/main.1cc416ec.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.1cc416ec.js"
+  ]
+}
