@@ -9,13 +9,14 @@ module.exports = {
  
     resolve: {
         // Добавить разрешения '.ts' и '.tsx' к обрабатываемым
-        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js", '.png']
     },
  
     module: {
         loaders: [
             // Все файлы с разрешениями '.ts' или '.tsx' будет обрабатывать 'ts-loader'
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            { test: /\.tsx?$/, loader: "ts-loader" },
+            { test: /\.(jpe?g|gif|png|svg)$/, loader: "file-loader?name=./images/[name].[ext]" }
         ],
  
         preLoaders: [

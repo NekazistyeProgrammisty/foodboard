@@ -17,6 +17,8 @@
 html, body {
     background-color: var(--bgcolor);
     height: 100%;
+    color: var(--primarybackgroundcolor);
+    font-weight: 700;
 }
 
 .App {

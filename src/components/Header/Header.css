@@ -9,6 +9,7 @@ header {
     align-items: center;
     font-weight: 700;
     position: fixed;
+    z-index: 1;
 }
 
 .text-logo {
