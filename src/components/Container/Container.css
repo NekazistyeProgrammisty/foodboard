@@ -6,3 +6,26 @@
     padding-bottom: 3.5rem;
     background-color: var(--primarybackgroundcolor);
 }
+
+.grid-cardholder {
+    display: grid;
+    grid-template-columns: 153px 153px 153px;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .grid-cardholder {
+        display: grid;
+        grid-template-columns: 153px 153px;
+        grid-gap: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-cardholder {
+        display: grid;
+        grid-template-columns: 153px 153px 153px 153px;
+        grid-gap: 15px;
+    }
+}
