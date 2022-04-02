@@ -15,9 +15,9 @@
 }
 
 html, body {
-    background-color: var(--bgcolor);
+    background-color: var(--primarybackgroundcolor);
     height: 100%;
-    color: var(--primarybackgroundcolor);
+    color: var(--txtcolor);
     font-weight: 700;
 }
 
