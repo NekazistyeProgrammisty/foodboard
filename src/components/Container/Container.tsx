@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Card from '../Card/Card';
 import './Container.css'
+import cardsReqSimulation from '../../API/cardsReqSimulation.json'
 
 interface ContainerProps {
     
@@ -11,26 +12,14 @@ const Container: React.FunctionComponent<ContainerProps> = () => {
     return (
         <main className='container'>
             <div className='grid-cardholder'>
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
-                <Card cardTitle='Блины с гавной' imgUrl='./bliny.png' ingredientMeter={[1, 2]} />
+                {cardsReqSimulation.map((element, id) =>
+                    <Card
+                        key={id}
+                        cardTitle={element.title}
+                        imgUrl={element.url}
+                        ingredientMeter={element.ingredientMeter}
+                    />
+                )}
             </div>
         </main>
     );
