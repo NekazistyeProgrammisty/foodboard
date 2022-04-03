@@ -25,8 +25,28 @@
 }
 
 .lower-container {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
     bottom: 0;
     position: absolute;
-    margin-left: 2.8%;
-    bottom: 2%;
+    margin-left: 3.5%;
+    bottom: 2.75%;
+}
+
+.cardbutton {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    background-color: var(--buttonbg);
+    border-radius: 50%;
+}
+
+.cardbutton:hover{
+    cursor: pointer;
+}
+
+#secondbutton {
+    margin-left: 3.55rem;
 }

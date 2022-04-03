@@ -16,6 +16,6 @@ header {
     margin-left: 0.75rem;
 }
 
-svg {
+header > svg {
     margin-left: 1.625rem;
 }
