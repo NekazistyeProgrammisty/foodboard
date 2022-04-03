@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/foodboard/static/css/main.26667c62.css",
-    "main.js": "/foodboard/static/js/main.e89de02d.js",
+    "main.css": "/foodboard/static/css/main.77e277d0.css",
+    "main.js": "/foodboard/static/js/main.4a284c69.js",
     "static/media/bliny.png": "/foodboard/static/media/bliny.595a7491392e69414c84.png",
-    "static/media/Grocery.svg": "/foodboard/static/media/Grocery.eb0a87eee28df22006018c6b62d70619.svg",
+    "static/media/Grocery.svg": "/foodboard/static/media/Grocery.b06d8514e813c66da3bf5632e1b2302f.svg",
     "index.html": "/foodboard/index.html",
-    "static/media/turnaround.svg": "/foodboard/static/media/turnaround.00637f7138a68dddc1050c094b7474f1.svg",
-    "main.26667c62.css.map": "/foodboard/static/css/main.26667c62.css.map",
-    "main.e89de02d.js.map": "/foodboard/static/js/main.e89de02d.js.map"
+    "static/media/turnaround.svg": "/foodboard/static/media/turnaround.9b8916505f04ea78465672cb18367192.svg",
+    "main.77e277d0.css.map": "/foodboard/static/css/main.77e277d0.css.map",
+    "main.4a284c69.js.map": "/foodboard/static/js/main.4a284c69.js.map"
   },
   "entrypoints": [
-    "static/css/main.26667c62.css",
-    "static/js/main.e89de02d.js"
+    "static/css/main.77e277d0.css",
+    "static/js/main.4a284c69.js"
   ]
 }
