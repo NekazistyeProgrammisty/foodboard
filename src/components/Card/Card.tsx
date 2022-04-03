@@ -5,18 +5,18 @@ import bliny2 from '../../images/bliny.png';
 import {ReactComponent as Grocery} from '../../images/Grocery.svg';
 import {ReactComponent as TurnAround} from '../../images/turnaround.svg';
 import CardButton from '../CardButton/CardButton';
-
-interface CardProps {
+ 
+export interface CardProps {
     imgUrl : string
-    cardTitle : string
+    title : string
     ingredientMeter : number[]
 }
  
-const Card: React.FunctionComponent<CardProps> = (props:CardProps) => {
+export const Card: React.FunctionComponent<CardProps> = (props:CardProps) => {
     return (
         <div className="card">
             <img alt='Фотография блюда' src={bliny2} />
-            <p>{props.cardTitle}</p>
+            <p>{props.title}</p>
             <div className='lower-container'>
                 <CardButton isSecond={false}>
                     <Grocery />

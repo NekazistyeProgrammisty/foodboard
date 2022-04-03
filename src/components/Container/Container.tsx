@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Card from '../Card/Card';
+import { Card , CardProps} from '../Card/Card';
 import './Container.css'
 import cardsReqSimulation from '../../API/cardsReqSimulation.json'
 
@@ -9,14 +9,22 @@ interface ContainerProps {
 }
  
 const Container: React.FunctionComponent<ContainerProps> = () => {
+    const [currentList, setCurrentList] = React.useState<CardProps[]>([]);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            setCurrentList(cardsReqSimulation)
+        }, 150)
+    }, [])
+
     return (
         <main className='container'>
             <div className='grid-cardholder'>
-                {cardsReqSimulation.map((element, id) =>
+                {currentList.map((element, id) =>
                     <Card
                         key={id}
-                        cardTitle={element.title}
-                        imgUrl={element.url}
+                        title={element.title}
+                        imgUrl={element.imgUrl}
                         ingredientMeter={element.ingredientMeter}
                     />
                 )}
