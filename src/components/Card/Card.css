@@ -1,6 +1,6 @@
 .card {
     margin-top: 0.5rem;
-    border-radius: 8%;
+    border-radius: 9%;
     display: flex;
     flex-direction: column;
     width: 153px;
@@ -17,7 +17,7 @@
 
 .card > p {
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.1rem;
     color: var(--primarybackgroundcolor);
     margin-top: 1%;
     margin-left: 2.8%;
@@ -25,28 +25,11 @@
 }
 
 .lower-container {
+    width: 100%;
     display: flex;
     align-items: center;
     column-gap: 0.3rem;
-    bottom: 0;
     position: absolute;
-    margin-left: 3.5%;
-    bottom: 2.75%;
-}
-
-.cardbutton {
-    display: grid;
-    place-items: center;
-    width: 22px;
-    height: 22px;
-    background-color: var(--buttonbg);
-    border-radius: 50%;
-}
-
-.cardbutton:hover{
-    cursor: pointer;
-}
-
-#secondbutton {
-    margin-left: 3.55rem;
+    bottom: 2.3%;
+    font-size: 1.1rem;
 }

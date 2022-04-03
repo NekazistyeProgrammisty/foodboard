@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import './Card.css'
 import bliny2 from '../../images/bliny.png';
-import {ReactComponent as Grocery} from '../../images/Grocery.svg'
-import {ReactComponent as TurnAround} from '../../images/turnaround.svg'
+import {ReactComponent as Grocery} from '../../images/Grocery.svg';
+import {ReactComponent as TurnAround} from '../../images/turnaround.svg';
+import CardButton from '../CardButton/CardButton';
 
 interface CardProps {
     imgUrl : string
@@ -17,13 +18,13 @@ const Card: React.FunctionComponent<CardProps> = (props:CardProps) => {
             <img alt='Фотография блюда' src={bliny2} />
             <p>{props.cardTitle}</p>
             <div className='lower-container'>
-                <div className="cardbutton">
+                <CardButton isSecond={false}>
                     <Grocery />
-                </div>
+                </CardButton>
                 {props.ingredientMeter[0]} / {props.ingredientMeter[1]}
-                <div id='secondbutton' className="cardbutton">
+                <CardButton isSecond={true}>
                     <TurnAround />
-                </div>
+                </CardButton>
             </div>
         </div>
     );

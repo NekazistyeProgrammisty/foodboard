@@ -1,0 +1,18 @@
+.cardbutton {
+    margin-left: 0.3rem;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--buttonbg);
+    border-radius: 50%;
+}
+
+.cardbutton:hover{
+    cursor: pointer;
+}
+
+#secondbutton {
+    margin-left: auto;
+    margin-right: 0.3rem;
+}
