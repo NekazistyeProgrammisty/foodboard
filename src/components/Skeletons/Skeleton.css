@@ -1,23 +1,22 @@
 .skeleton {
-    background: #ddd;
-    margin: 10px 0;
+    background: #ffeabe8a;
     border-radius: 4px;
 }
 
 .skeleton.text {
-    width: 85%;
-    height: 12px;
+    width: 30%;
+    height: 5px;
 }
 
 .skeleton.title {
     width: 75%;
-    height: 17%;
-    margin-bottom: 15px;
+    height: 12%;
+    margin-top: 0.25rem;
 }
 
 .skeleton.image {
     width: 94%;
-    height: 100px;
+    height: 6rem;
     border-radius: 10px 10px 4px 4px;
 }
 
@@ -25,4 +24,14 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+}
+
+.skeleton.button:hover {
+    cursor:default;
+}
+
+.skeleton.subtitle {
+    width: 30%;
+    height: 1.2rem;
+    margin-top: 0;
 }

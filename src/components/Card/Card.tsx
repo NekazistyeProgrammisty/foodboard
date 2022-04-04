@@ -15,8 +15,8 @@ export interface CardProps {
 export const Card: React.FunctionComponent<CardProps> = (props:CardProps) => {
     return (
         <div className="card">
-            <img alt='Фотография блюда' src={bliny2} />
-            <p>{props.title}</p>
+            <img className='avatar' alt='Фотография блюда' src={bliny2} />
+            <p className='card-title'>{props.title}</p>
             <div className='lower-container'>
                 <CardButton isSecond={false}>
                     <Grocery />

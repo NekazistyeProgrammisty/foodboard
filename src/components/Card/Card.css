@@ -8,17 +8,17 @@
     background-color: #FF6E69;
 }
 
-.card > img {
+.card > .avatar {
     width : 94%;
     margin-left: 3%;
     margin-top: 2.75%;
 }
 
-.card > p {
+.card > .card-title {
     display: inline-block;
     font-size: 1.1rem;
     color: var(--primarybackgroundcolor);
-    margin-top: 1%;
+    margin-top: 3.5% !important;
     margin-left: 2.8%;
     font-weight: 700;
 }

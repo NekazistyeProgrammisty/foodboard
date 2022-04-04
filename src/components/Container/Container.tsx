@@ -22,11 +22,6 @@ const Container: React.FunctionComponent<ContainerProps> = () => {
     return (
         <main className='container'>
             <div className='grid-cardholder'>
-                <SkeletonElement variant={'image'} />
-                <SkeletonElement variant={'text'} />
-                <SkeletonElement variant={'button'} />
-                <SkeletonElement variant={'title'} />
-
                 <SkeletonCard />
                 <SkeletonCard />
                 <SkeletonCard />
