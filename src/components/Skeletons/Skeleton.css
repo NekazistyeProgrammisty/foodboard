@@ -2,6 +2,10 @@
     background: #ffeabe8a;
     border-radius: 4px;
 }
+.skeleton-wrapper {
+    position: relative;
+    overflow: hidden;
+}
 
 .skeleton.text {
     width: 30%;

@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Card , CardProps} from '../Card/Card';
 import './Container.css';
 import cardsReqSimulation from '../../API/cardsReqSimulation.json';
-import SkeletonElement from '../Skeletons/SkeletonElement';
 import SkeletonCard from '../Skeletons/Cards/SkeletonCard';
 
 interface ContainerProps {
@@ -12,22 +11,23 @@ interface ContainerProps {
  
 const Container: React.FunctionComponent<ContainerProps> = () => {
     const [currentList, setCurrentList] = React.useState<CardProps[]>([]);
+    //const [cardsFetched, setCardsFetched] = React.useState<boolean>(false);
 
     React.useEffect(() => {
         setTimeout(() => {
             setCurrentList(cardsReqSimulation)
-        }, 150)
+            //setCardsFetched(true);
+        }, 3000)
     }, []);
 
     return (
         <main className='container'>
             <div className='grid-cardholder'>
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
+                {!currentList.length && [...Array(40).keys()].map((elment, id) => <SkeletonCard key={id}/>)}
 
-                {currentList.map((element, id) =>
+                
+
+                {currentList.length && currentList.map((element, id) =>
                     <Card
                         key={id}
                         title={element.title}

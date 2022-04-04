@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import SkeletonElement from '../SkeletonElement';
+import Shimmer from '../Shimmer';
 
 
 interface SkeletonCardProps {
@@ -19,6 +20,7 @@ const SkeletonCard: React.FunctionComponent<SkeletonCardProps> = () => {
                     <SkeletonElement className='cardbutton secondbutton' variant='button' />
                 </div>
             </div>
+            <Shimmer />
         </div>
     );
 }
