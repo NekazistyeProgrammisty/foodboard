@@ -9,7 +9,7 @@ interface CardButtonProps {
  
 const CardButton: React.FunctionComponent<CardButtonProps> = (props) => {
     return ( 
-        <div id={props.isSecond ? 'secondbutton' : ''} className="cardbutton">
+        <div className={`cardbutton ${props.isSecond ? 'secondbutton' : ''}`}>
             {props.children}
         </div>
     );

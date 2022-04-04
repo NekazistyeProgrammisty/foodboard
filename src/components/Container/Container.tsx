@@ -1,8 +1,10 @@
 import * as React from 'react';
 
 import { Card , CardProps} from '../Card/Card';
-import './Container.css'
-import cardsReqSimulation from '../../API/cardsReqSimulation.json'
+import './Container.css';
+import cardsReqSimulation from '../../API/cardsReqSimulation.json';
+import SkeletonElement from '../Skeletons/SkeletonElement';
+import SkeletonCard from '../Skeletons/Cards/SkeletonCard';
 
 interface ContainerProps {
     
@@ -15,11 +17,21 @@ const Container: React.FunctionComponent<ContainerProps> = () => {
         setTimeout(() => {
             setCurrentList(cardsReqSimulation)
         }, 150)
-    }, [])
+    }, []);
 
     return (
         <main className='container'>
             <div className='grid-cardholder'>
+                <SkeletonElement variant={'image'} />
+                <SkeletonElement variant={'text'} />
+                <SkeletonElement variant={'button'} />
+                <SkeletonElement variant={'title'} />
+
+                <SkeletonCard />
+                <SkeletonCard />
+                <SkeletonCard />
+                <SkeletonCard />
+
                 {currentList.map((element, id) =>
                     <Card
                         key={id}
