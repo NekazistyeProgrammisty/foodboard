@@ -23,6 +23,7 @@ const Container: React.FunctionComponent<ContainerProps> = () => {
     return (
         <main className='container'>
             <div className='grid-cardholder'>
+
                 {!currentList.length && [...Array(40).keys()].map((elment, id) => <SkeletonCard key={id}/>)}
 
                 
