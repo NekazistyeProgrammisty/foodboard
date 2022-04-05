@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/foodboard/static/css/main.68e92078.css",
-    "main.js": "/foodboard/static/js/main.69fe0abe.js",
+    "main.css": "/foodboard/static/css/main.a8ab8b0f.css",
+    "main.js": "/foodboard/static/js/main.a76ee253.js",
     "static/media/bliny.png": "/foodboard/static/media/bliny.595a7491392e69414c84.png",
     "static/media/Grocery.svg": "/foodboard/static/media/Grocery.b06d8514e813c66da3bf5632e1b2302f.svg",
     "static/media/Products.svg": "/foodboard/static/media/Products.c151263856f6170e590301a698c796ad.svg",
@@ -11,11 +11,11 @@
     "static/media/Heart.svg": "/foodboard/static/media/Heart.fadc4c60ff64429cd2bbaee7ffadb1f2.svg",
     "static/media/User.svg": "/foodboard/static/media/User.0e7336f209d03da8f7639814fa8905f5.svg",
     "static/media/turnaround.svg": "/foodboard/static/media/turnaround.9b8916505f04ea78465672cb18367192.svg",
-    "main.68e92078.css.map": "/foodboard/static/css/main.68e92078.css.map",
-    "main.69fe0abe.js.map": "/foodboard/static/js/main.69fe0abe.js.map"
+    "main.a8ab8b0f.css.map": "/foodboard/static/css/main.a8ab8b0f.css.map",
+    "main.a76ee253.js.map": "/foodboard/static/js/main.a76ee253.js.map"
   },
   "entrypoints": [
-    "static/css/main.68e92078.css",
-    "static/js/main.69fe0abe.js"
+    "static/css/main.a8ab8b0f.css",
+    "static/js/main.a76ee253.js"
   ]
 }
