@@ -17,7 +17,7 @@ const Container: React.FunctionComponent<ContainerProps> = () => {
         setTimeout(() => {
             setCurrentList(cardsReqSimulation)
             //setCardsFetched(true);
-        }, 3000)
+        }, 500)
     }, []);
 
     return (

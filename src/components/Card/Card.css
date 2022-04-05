@@ -4,8 +4,14 @@
     flex-direction: column;
     width: 153px;
     height: 190px;
-    position: relative;
     background-color: #FF6E69;
+}
+
+.relate {
+    position: relative;
+    min-height: 190px;
+    transform-style: preserve-3d;
+    transition: all 0.6s ease;
 }
 
 .card > .avatar {
@@ -32,3 +38,18 @@
     bottom: 2.3%;
     font-size: 1.1rem;
 }
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+
+.back {
+    transform: rotateY(180deg);
+}
+
