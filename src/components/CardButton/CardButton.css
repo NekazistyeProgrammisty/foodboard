@@ -6,11 +6,12 @@
     height: 30px;
     background-color: var(--buttonbg);
     border-radius: 50%;
-}
-
-.cardbutton:hover{
     cursor: pointer;
 }
+
+/* .cardbutton:hover{
+    cursor: pointer;
+} */
 
 .secondbutton {
     margin-left: auto;

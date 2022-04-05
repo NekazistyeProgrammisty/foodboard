@@ -17,11 +17,19 @@ export interface CardProps {
 export const Card: React.FunctionComponent<CardProps> = (props:CardProps) => {
     const [flipped, setFlipped] = React.useState<boolean>(false);
 
+    const RETURN_TIMEOUT = 0;
+
     const flipHandler = () : void => {
         setFlipped(() => !flipped);
-        console.log('zhiopa');
-        
     }
+
+    React.useEffect(() => {
+        if (flipped && RETURN_TIMEOUT) {
+            setTimeout(() => {
+                setFlipped(false);
+            }, RETURN_TIMEOUT);
+        }
+    }, [flipped])
 
 
     return (
