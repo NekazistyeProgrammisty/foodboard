@@ -10,7 +10,7 @@ interface CardButtonProps {
  
 const CardButton: React.FunctionComponent<CardButtonProps> = (props) => {
     return ( 
-        <div onClick={props.clickHandler} className={`cardbutton ${props.isSecond ? 'secondbutton' : ''}`}>
+        <div onClick={props.clickHandler} className={`card-button ${props.isSecond ? 'right-side-button' : ''}`}>
             {props.children}
         </div>
     );

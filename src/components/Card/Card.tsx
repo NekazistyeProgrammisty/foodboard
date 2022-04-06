@@ -34,11 +34,11 @@ export const Card: React.FunctionComponent<CardProps> = (props:CardProps) => {
 
 
     return (
-        <div className={`relate ${flipped ? 'flipped' : ''}`}>
+        <div className={`card-wrapper ${flipped ? 'flipped' : ''}`}>
             <div className={`card front`}>
                 <CardAvatar src={bliny2} />
                 <p className='card-title'>{props.title}</p>
-                <div className='lower-container'>
+                <div className='lower-card-container'>
                     <CardButton isSecond={false}>
                         <Grocery />
                     </CardButton>
@@ -50,7 +50,7 @@ export const Card: React.FunctionComponent<CardProps> = (props:CardProps) => {
             </div>
             <div className={`card back`}> 
                 <p className='card-title'>{props.title}</p>
-                <div className='lower-container'>
+                <div className='lower-card-container'>
                     <CardButton clickHandler={flipHandler} isSecond={true}>
                         <TurnAround />
                     </CardButton>

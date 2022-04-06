@@ -14,10 +14,10 @@ const SkeletonCard: React.FunctionComponent<SkeletonCardProps> = () => {
             <div className="card skeleton-card">
                 <SkeletonElement className='avatar' variant='image' />
                 <SkeletonElement className='card-title' variant='title' />
-                <div className="lower-container">
-                    <SkeletonElement className='cardbutton' variant='button' />
+                <div className="lower-card-container">
+                    <SkeletonElement className='card-button' variant='button' />
                     <SkeletonElement className='subtitle' variant='title'/>
-                    <SkeletonElement className='cardbutton secondbutton' variant='button' />
+                    <SkeletonElement className='card-button right-side-button' variant='button' />
                 </div>
             </div>
             <Shimmer />

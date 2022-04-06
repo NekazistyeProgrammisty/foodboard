@@ -1,4 +1,4 @@
-.cardbutton {
+.card-button {
     margin-left: 0.3rem;
     display: grid;
     place-items: center;
@@ -13,7 +13,7 @@
     cursor: pointer;
 } */
 
-.secondbutton {
+.right-side-button {
     margin-left: auto;
     margin-right: 0.3rem;
 }
