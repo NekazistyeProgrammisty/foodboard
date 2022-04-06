@@ -7,10 +7,10 @@ interface SkeletonAvatarProps{
     
 }
  
-const SkeletonAvatar: React.FunctionComponent<SkeletonAvatarProps> = (props) => {
+const SkeletonAvatar: React.FunctionComponent<SkeletonAvatarProps> = () => {
     return (
-        <div className="skeleton-wrapper avatar" style={{width: '100%'}}>
-            <SkeletonElement variant='image' />
+        <div className="skeleton-wrapper avatar" style={{width: '94%', height: '50%'}}>
+            <SkeletonElement className='fullheight fullwidth' variant='image' />
             <Shimmer />
         </div>
     );

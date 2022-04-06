@@ -25,6 +25,14 @@
     border-radius: 10px 10px 4px 4px;
 }
 
+.fullheight {
+    height: 100% !important;
+}
+
+.fullwidth {
+    width: 100% !important;
+}
+
 .skeleton.button {
     width: 30px;
     height: 30px;
