@@ -14,14 +14,14 @@
     transition: transform 0.6s ease;
 }
 
-.card > .avatar {
-    width : 94%;
+.card>.avatar {
+    width: 94%;
     margin-left: 3%;
     margin-top: 2.75%;
     height: 50%;
 }
 
-.card > .card-title {
+.card>.card-title {
     display: inline-block;
     font-size: 1.1rem;
     color: var(--primarybackgroundcolor);
@@ -52,7 +52,8 @@
     font-weight: 500;
 }
 
-.front, .back {
+.front,
+.back {
     backface-visibility: hidden;
     position: absolute;
 }
@@ -64,7 +65,3 @@
 .flipped {
     transform: rotateY(180deg);
 }
-
-
-
-

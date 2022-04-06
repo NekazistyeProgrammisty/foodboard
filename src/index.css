@@ -7,21 +7,21 @@
     --headertxtsize: 1.5rem;
     --secondarycolor: #FFE8BB;
     --buttonbg: #F6E0B5;
-    --cardwidth : 11rem;
-    --cardlength : 13.75rem;
+    --cardwidth: 11rem;
+    --cardlength: 13.75rem;
 }
 
 @media (min-width: 950px) {
     :root {
-        --cardwidth : 12rem;
+        --cardwidth: 12rem;
         --cardlength: 15rem;
     }
 }
 
 @media (max-width: 660px) {
     :root {
-        --cardwidth : 10rem;
-        --cardlength : 12.5rem;
+        --cardwidth: 10rem;
+        --cardlength: 12.5rem;
     }
 }
 
@@ -32,7 +32,8 @@
     font-family: 'Roboto';
 }
 
-html, body {
+html,
+body {
     background-color: var(--primarybackgroundcolor);
     height: 100%;
     color: var(--txtcolor);

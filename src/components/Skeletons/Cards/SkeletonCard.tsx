@@ -5,9 +5,9 @@ import Shimmer from '../Shimmer';
 
 
 interface SkeletonCardProps {
-    
+
 }
- 
+
 const SkeletonCard: React.FunctionComponent<SkeletonCardProps> = () => {
     return (
         <div className="skeleton-wrapper">
@@ -16,7 +16,7 @@ const SkeletonCard: React.FunctionComponent<SkeletonCardProps> = () => {
                 <SkeletonElement className='card-title' variant='title' />
                 <div className="lower-card-container">
                     <SkeletonElement className='card-button' variant='button' />
-                    <SkeletonElement className='subtitle' variant='title'/>
+                    <SkeletonElement className='subtitle' variant='title' />
                     <SkeletonElement className='card-button right-side-button' variant='button' />
                 </div>
             </div>
