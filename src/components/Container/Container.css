@@ -2,26 +2,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 4rem;
-    padding-bottom: 3.8rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
     background-color: var(--primarybackgroundcolor);
 }
 
 .grid-cardholder {
     display: grid;
-    grid-template-columns: 153px 153px 153px;
+    grid-template-columns: var(--cardwidth) var(--cardwidth) var(--cardwidth);
     align-items: center;
     grid-gap: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 660px) {
     .grid-cardholder {
-        grid-template-columns: 153px 153px;
+        grid-template-columns: var(--cardwidth) var(--cardwidth);
+        grid-gap: 25px;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
     .grid-cardholder {
-        grid-template-columns: 153px 153px 153px 153px;
+        grid-template-columns: var(--cardwidth) var(--cardwidth) var(--cardwidth) var(--cardwidth);
+        grid-gap: 30px;
     }
 }
