@@ -10,7 +10,7 @@ const App : React.FC = () => {
   return (
     <div className="App">
       <Header />
-      <Container />
+      {/* <Container /> */}
       <Footer 
         sections={footerSections}
       />

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import './FooterElement.css';
 
@@ -9,10 +10,10 @@ interface FooterElementProps {
  
 const FooterElement: React.FunctionComponent<FooterElementProps> = (props) => {
     return (
-        <div className="footer-element">
+        <Link to={`/${props.text.toLowerCase().replace(' ', '')}`} className="footer-element">
             {props.children}
             <span>{props.text}</span>
-        </div>
+        </Link>
     );
 }
  

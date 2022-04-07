@@ -5,6 +5,7 @@
     gap: 0.2rem;
     color: var(--secondarycolor);
     font-size: 0.7rem;
+    text-decoration: none;
 }
 
 .footer-element:hover {

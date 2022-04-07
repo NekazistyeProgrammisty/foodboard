@@ -4,8 +4,6 @@ import { Card , CardProps} from '../Card/Card';
 import './Container.css';
 import cardsReqSimulation from '../../API/cardsReqSimulation.json';
 import SkeletonCard from '../Skeletons/Cards/SkeletonCard';
-import SkeletonAvatar from '../Skeletons/Avatar/SkeletonAvatar';
-import SkeletonElement from '../Skeletons/SkeletonElement';
 
 interface ContainerProps {
     

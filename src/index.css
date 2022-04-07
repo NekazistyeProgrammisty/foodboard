@@ -32,6 +32,10 @@
     font-family: 'Roboto';
 }
 
+#root {
+    height: 100%;
+}
+
 html,
 body {
     background-color: var(--primarybackgroundcolor);
