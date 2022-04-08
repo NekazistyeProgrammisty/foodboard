@@ -16,6 +16,8 @@ const CardHolder: React.FunctionComponent<CardHolderProps> = () => {
 
     React.useEffect(() => {
         setTimeout(() => {
+            console.log("Запрос к API");
+            
             setCurrentList(cardsReqSimulation)
             //setCardsFetched(true);
         }, 500)

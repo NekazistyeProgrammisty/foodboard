@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ProductsPage from '../../routes/products';
 import './Container.css';
 
 interface ContainerProps {
