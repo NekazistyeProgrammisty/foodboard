@@ -7,24 +7,3 @@
     padding-bottom: 4.5rem;
     background-color: var(--primarybackgroundcolor);
 }
-
-.grid-cardholder {
-    display: grid;
-    grid-template-columns: var(--cardwidth) var(--cardwidth) var(--cardwidth);
-    align-items: center;
-    grid-gap: 20px;
-}
-
-@media (max-width: 660px) {
-    .grid-cardholder {
-        grid-template-columns: var(--cardwidth) var(--cardwidth);
-        grid-gap: 25px;
-    }
-}
-
-@media (min-width: 950px) {
-    .grid-cardholder {
-        grid-template-columns: var(--cardwidth) var(--cardwidth) var(--cardwidth) var(--cardwidth);
-        grid-gap: 30px;
-    }
-}

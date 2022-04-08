@@ -1,41 +1,17 @@
 import * as React from 'react';
-
-import { Card , CardProps} from '../Card/Card';
+import ProductsPage from '../../routes/products';
 import './Container.css';
-import cardsReqSimulation from '../../API/cardsReqSimulation.json';
-import SkeletonCard from '../Skeletons/Cards/SkeletonCard';
 
 interface ContainerProps {
-    
+    content? : React.ReactNode | null
 }
  
-const Container: React.FunctionComponent<ContainerProps> = () => {
-    const [currentList, setCurrentList] = React.useState<CardProps[]>([]);
-    //const [cardsFetched, setCardsFetched] = React.useState<boolean>(false);
-
-    React.useEffect(() => {
-        setTimeout(() => {
-            setCurrentList(cardsReqSimulation)
-            //setCardsFetched(true);
-        }, 500)
-    }, []);
+const Container: React.FunctionComponent<ContainerProps> = (props) => {
+    
 
     return (
         <main className='container'>
-            <div className='grid-cardholder'>
-                {!currentList.length && [...Array(40).keys()].map((elment, id) => <SkeletonCard key={id}/>)}
-
-                
-
-                {currentList.length && currentList.map((element, id) =>
-                    <Card
-                        key={id}
-                        title={element.title}
-                        imgUrl={element.imgUrl}
-                        ingredientMeter={element.ingredientMeter}
-                    />
-                )}
-            </div>
+            {props.content}
         </main>
     );
 }
