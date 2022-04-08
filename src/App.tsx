@@ -3,8 +3,9 @@ import * as React from 'react';
 import Header from './components/Header/Header';
 import Container from './components/Container/Container';
 import Footer from './components/Footer/Footer';
-import { footerSections } from './App.constants';
 
+
+export const footerSections = ['Feed', 'Products', 'Get Recipes', 'User', 'Favorite'];
 
 const App : React.FC = () => {
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { footerSections } from '../App.constants';
+import { footerSections } from '../App';
 import CardHolder from '../components/CardHolder/CardHolder';
 import Container from '../components/Container/Container';
 import Footer from '../components/Footer/Footer';

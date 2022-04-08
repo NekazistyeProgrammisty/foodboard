@@ -1,1 +1,0 @@
-export const footerSections = ['Feed', 'Products', 'Get Recipes', 'User', 'Favorite'];
