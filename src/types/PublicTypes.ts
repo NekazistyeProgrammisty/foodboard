@@ -3,3 +3,8 @@ export interface SkeletonTypeVariants {
     className? : string 
 }
 
+
+export interface ILoadable {
+    error: null | string,
+    loading: boolean
+}
