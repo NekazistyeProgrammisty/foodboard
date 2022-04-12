@@ -13,7 +13,6 @@ const ProductsPage: React.FunctionComponent<ProductsPageProps> = () => {
         <>
             <Header />
                 <main className='container' style={{color: '#bbb'}}>
-                    Здесь тоже ничего нет, но скоро будет!!!
                     Посмотрите в консоль: я интегрировал Redux)))))))))))
                     <ProductsList />
                 </main>
