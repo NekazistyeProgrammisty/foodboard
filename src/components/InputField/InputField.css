@@ -4,7 +4,6 @@
 
 .searchInputs {
     display: flex;
-
 }
 
 input[type='text'] {
@@ -43,6 +42,12 @@ input[type='text']:focus {
 
 .inputIcon svg:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .search {
+        width: 80%;
+    }
 }
 
 
