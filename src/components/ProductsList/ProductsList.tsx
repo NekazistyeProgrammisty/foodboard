@@ -14,7 +14,7 @@ const ProductsList: React.FunctionComponent<IProductsListProps> = () => {
 
     React.useEffect(() => {
         dispatch(fetchProducts());
-    }, [])
+    }, [dispatch])
 
     console.info(products);
     

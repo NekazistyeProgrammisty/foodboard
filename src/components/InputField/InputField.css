@@ -1,0 +1,48 @@
+.search {
+    width: 40%;
+}
+
+.searchInputs {
+    display: flex;
+
+}
+
+input[type='text'] {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    height: 2.2rem;
+    border-radius: 10px 0px 0px 10px;
+    border: 0;
+    padding-left: 2%;
+    font-weight: 500;
+}
+
+input[type='text']:focus {
+    outline: 0;
+}
+
+.inputIcon {
+    height: 2.2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.inputIcon.searchIcon {
+    background-color: rgb(255, 255, 255);
+}
+
+.inputIcon.addIcon {
+    background-color: #eb5151;
+    width: 4rem;
+}
+
+.searchIcon svg {
+    padding: 0px 0.3rem;
+}
+
+.inputIcon svg:hover {
+    cursor: pointer;
+}
+
+
