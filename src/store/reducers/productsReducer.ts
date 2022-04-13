@@ -2,11 +2,7 @@ import { IProductsAction, IProductsState, ProductsActionTypes } from "../../type
 
 
 const initialState : IProductsState = {
-    products: [{
-        title: '',
-        count: 0,
-        expirationDays: 0,
-    }],
+    products: [],
     loading: false,
     error: null
 }

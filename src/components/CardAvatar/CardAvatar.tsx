@@ -3,7 +3,6 @@ import SkeletonAvatar from '../Skeletons/Avatar/SkeletonAvatar';
 
 interface CardAvatarProps extends React.ImgHTMLAttributes<HTMLElement> {
     placeholderElement? : React.ReactNode
-
 }
  
 const CardAvatar: React.FunctionComponent<CardAvatarProps> = ({placeholderElement, src, ...props}) => {
@@ -21,12 +20,9 @@ const CardAvatar: React.FunctionComponent<CardAvatarProps> = ({placeholderElemen
         return () => {
             img.removeEventListener('load', onLoad);
         }
-
     }, [src, onLoad])
 
     return (
-        
-
         ready ? <img className='avatar' {...props} alt='Фотография блюда' src = {src}/> : <SkeletonAvatar/>
     );
 }
