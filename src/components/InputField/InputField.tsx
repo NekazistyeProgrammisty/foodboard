@@ -18,7 +18,17 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, da
 
     const dispatch = useDispatch();
 
-    const AddProduct = () => { dispatch(addProduct({ title: userValue, count: 1, expirationDays: 1 })) };
+    const AddProduct = () => { dispatch(addProduct(
+        {title: userValue, count: 1, expirationDays: 1 }
+        ));
+        setUserValue('');
+    };
+
+    const enterPressHandler = ( event: React.KeyboardEvent<HTMLInputElement> ) => {
+        if (event.key == 'Enter') {
+            AddProduct();
+        }
+    }
 
     const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUserValue(event.target.value);
@@ -46,7 +56,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, da
     return (
         <div className="search">
             <div className="searchInputs">
-                <input type={'text'} onChange={userInputHandler} placeholder={placeholder}/>
+                <input onKeyUp={enterPressHandler} type={'text'} onChange={userInputHandler} value={userValue} placeholder={placeholder}/>
                 {IconField()}
             </div>
             <div className="dataResult">
