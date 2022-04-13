@@ -12,7 +12,7 @@ interface IInputFieldProps {
     type?: 'search' | 'add'
 }
  
-const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, data , type = 'search' } : IInputFieldProps) => {
+const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, data , type = 'search' }) => {
 
     const [userValue, setUserValue] = React.useState<string>('');
 
@@ -25,7 +25,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, da
     };
 
     const enterPressHandler = ( event: React.KeyboardEvent<HTMLInputElement> ) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             AddProduct();
         }
     }
