@@ -1,10 +1,7 @@
 import { Dispatch } from 'redux';
 
 import { IProduct, IProductsAction, IProductsState, ProductsActionTypes } from "../../types/ProductTypes"
- 
 // https://jsonplaceholder.typicode.com/users
-
-
 
 
 const fake_response_from_api : IProductsState = {
