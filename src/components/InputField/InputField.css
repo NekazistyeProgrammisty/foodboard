@@ -44,9 +44,12 @@ input[type='text']:focus {
     cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .search {
         width: 80%;
+    }
+    input[type='text'] {
+        font-size: 17px;
     }
 }
 
