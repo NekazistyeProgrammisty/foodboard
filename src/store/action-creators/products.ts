@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 
-import { IProductsAction, IProductsState, ProductsActionTypes } from "../../types/ProductTypes"
+import { IProduct, IProductsAction, IProductsState, ProductsActionTypes } from "../../types/ProductTypes"
  
 // https://jsonplaceholder.typicode.com/users
 
@@ -64,3 +64,17 @@ export const fetchProducts = () => {
         }
     }
 }
+
+export const addProduct = (product: IProduct) => {
+    return async (dispatch : Dispatch<IProductsAction>) => {        
+        try {
+            setTimeout( () => {       
+                dispatch({ type: ProductsActionTypes.ADD_PRODUCT, payload: product })
+            }, 50)
+            
+        } catch (error) {
+            dispatch({ type: ProductsActionTypes.FETCH_PRODUCTS_ERROR, payload: "Chto-to slomalos', pososi!!!"})
+        }
+    }
+}
+

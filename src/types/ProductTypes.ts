@@ -1,6 +1,6 @@
 import { ILoadable } from "./PublicTypes"
 
-interface IProduct {
+export interface IProduct {
     title: string,
     count: number,
     expirationDays: number,
@@ -9,7 +9,8 @@ interface IProduct {
 export enum ProductsActionTypes {
     FETCH_PRODUCTS = 'FETCH_PRODUCTS',
     FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS',
-    FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR'
+    FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR',
+    ADD_PRODUCT = 'ADD_PRODUCT'
 }
 
 export interface IProductsState extends ILoadable {
@@ -18,6 +19,11 @@ export interface IProductsState extends ILoadable {
 
 interface IFetchProductsAction {
     type: ProductsActionTypes.FETCH_PRODUCTS
+}
+
+interface IAddProductsAction {
+    type: ProductsActionTypes.ADD_PRODUCT
+    payload: IProduct
 }
 
 interface IFetchProductsSuccessAction {
@@ -30,4 +36,4 @@ interface IFetchProductsErrorAction {
     payload: string
 }
 
-export type IProductsAction = IFetchProductsAction | IFetchProductsSuccessAction | IFetchProductsErrorAction
+export type IProductsAction = IFetchProductsAction | IFetchProductsSuccessAction | IFetchProductsErrorAction | IAddProductsAction

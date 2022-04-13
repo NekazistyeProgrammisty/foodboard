@@ -21,7 +21,9 @@ export const productsReducer = (state : IProductsState = initialState, action : 
 
         case ProductsActionTypes.FETCH_PRODUCTS_ERROR:
             return { products: [], loading: false, error: action.payload }
-
+        
+        case ProductsActionTypes.ADD_PRODUCT:
+            return { products: [...state.products, action.payload], loading: false, error: null }
         default:
             return state
     }

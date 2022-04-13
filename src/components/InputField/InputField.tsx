@@ -3,6 +3,8 @@ import * as React from 'react';
 import './InputField.css'
 import {ReactComponent as SearchIcon} from '../../images/SearchIcon.svg'
 import {ReactComponent as AddIcon} from '../../images/add.svg'
+import { addProduct } from '../../store/action-creators/products';
+import { useDispatch } from 'react-redux';
 
 interface IInputFieldProps {
     placeholder: string,
@@ -11,7 +13,17 @@ interface IInputFieldProps {
 }
  
 const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, data , type = 'search' } : IInputFieldProps) => {
-    
+
+    const [userValue, setUserValue] = React.useState<string>('');
+
+    const dispatch = useDispatch();
+
+    const AddProduct = () => { dispatch(addProduct({ title: userValue, count: 1, expirationDays: 1 })) };
+
+    const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setUserValue(event.target.value);
+    };
+
     const IconField = () => {
         switch (type) {
             case 'search':
@@ -22,7 +34,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, da
                 )
             case 'add':
                 return (
-                    <div className="inputIcon addIcon">
+                    <div onClick={AddProduct} className="inputIcon addIcon">
                         <AddIcon />
                     </div>
                 )
@@ -34,11 +46,10 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({ placeholder, da
     return (
         <div className="search">
             <div className="searchInputs">
-                <input type={'text'} placeholder={placeholder}/>
+                <input type={'text'} onChange={userInputHandler} placeholder={placeholder}/>
                 {IconField()}
             </div>
             <div className="dataResult">
-
             </div>
         </div>
     );
