@@ -1,22 +1,19 @@
-import * as React from "react";
-import Card, { CardProps } from "../Card/Card";
-import cardsReqSimulation from "../../API/cardsReqSimulation.json";
-import SkeletonCard from "../Skeletons/Cards/SkeletonCard";
+/* eslint-disable react/no-array-index-key */
+import * as React from 'react';
+import Card, { CardProps } from '../Card/Card';
+import cardsReqSimulation from '../../API/cardsReqSimulation.json';
+import SkeletonCard from '../Skeletons/Cards/SkeletonCard';
 
-import "./CardHolder.css";
+import './CardHolder.css';
 
-interface CardHolderProps {}
-
-const CardHolder: React.FunctionComponent<CardHolderProps> = () => {
+const CardHolder: React.FunctionComponent = () => {
 	const [currentList, setCurrentList] = React.useState<CardProps[]>([]);
-	//const [cardsFetched, setCardsFetched] = React.useState<boolean>(false);
+	// const [cardsFetched, setCardsFetched] = React.useState<boolean>(false);
 
 	React.useEffect(() => {
 		setTimeout(() => {
-			console.log("Запрос к API");
-
 			setCurrentList(cardsReqSimulation);
-			//setCardsFetched(true);
+			// setCardsFetched(true);
 		}, 500);
 	}, []);
 
