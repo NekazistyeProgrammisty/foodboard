@@ -1,11 +1,11 @@
-import * as React from "react";
-import { useDispatch } from "react-redux";
-import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { fetchProducts } from "../../store/action-creators/products";
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react/no-array-index-key */
+import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { fetchProducts } from '../../store/action-creators/products';
 
-interface IProductsListProps {}
-
-const ProductsList: React.FunctionComponent<IProductsListProps> = () => {
+const ProductsList: React.FunctionComponent = () => {
 	const { products, error, loading } = useTypedSelector(
 		(store) => store.products
 	);
@@ -15,8 +15,6 @@ const ProductsList: React.FunctionComponent<IProductsListProps> = () => {
 	React.useEffect(() => {
 		dispatch(fetchProducts());
 	}, [dispatch]);
-
-	console.info(products);
 
 	return (
 		<>
@@ -28,11 +26,9 @@ const ProductsList: React.FunctionComponent<IProductsListProps> = () => {
 				<h3>Вот это - типа хранилище продуктов пользователя</h3>
 			)}
 
-			{products.map((product, index) => {
-				console.log(product);
-
-				return <div key={index}> {product.title} </div>;
-			})}
+			{products.map((product, index) => (
+				<div key={index}>{product.title}</div>
+			))}
 		</>
 	);
 };

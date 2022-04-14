@@ -1,15 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
-import "./Shimmer.css";
+import './Shimmer.css';
 
-interface ShimmerProps {}
-
-const Shimmer: React.FunctionComponent<ShimmerProps> = () => {
-	return (
-		<div className="shimmer-wrapper">
-			<div className="shimmer"></div>
-		</div>
-	);
-};
+const Shimmer: React.FunctionComponent = () => (
+	<div className="shimmer-wrapper">
+		<div className="shimmer" />
+	</div>
+);
 
 export default Shimmer;

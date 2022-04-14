@@ -1,16 +1,15 @@
-import * as React from "react";
+import * as React from 'react';
 
-import "./Skeleton.css";
-import { SkeletonTypeVariants } from "../../types/PublicTypes";
+import './Skeleton.css';
+import { SkeletonTypeVariants } from '../../types/PublicTypes';
 
-const SkeletonElement: React.FunctionComponent<SkeletonTypeVariants> = (
-	props
-) => {
-	const classes: string = `skeleton ${props.variant} ${
-		props.className ? props.className : ""
-	}`;
+const SkeletonElement: React.FunctionComponent<SkeletonTypeVariants> = ({
+	className,
+	variant
+}) => {
+	const classes = `skeleton ${variant} ${className || ''}`;
 
-	return <div className={classes}></div>;
+	return <div className={classes} />;
 };
 
 export default SkeletonElement;
