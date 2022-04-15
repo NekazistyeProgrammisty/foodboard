@@ -1,9 +1,8 @@
-import { combineReducers } from "redux";
-import { productsReducer } from "./productsReducer";
-
+import { combineReducers } from 'redux';
+import { productsReducer } from './productsReducer';
 
 export const mainReducer = combineReducers({
-    products: productsReducer
-})
+	products: productsReducer
+});
 
 export type MainState = ReturnType<typeof mainReducer>;

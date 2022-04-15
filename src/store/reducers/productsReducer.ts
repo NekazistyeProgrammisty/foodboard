@@ -1,3 +1,4 @@
+/* eslint-disable default-param-last */
 import { IProductsAction, IProductsState, ProductsActionTypes } from '../../types/ProductTypes';
 
 const initialState : IProductsState = {
@@ -6,7 +7,7 @@ const initialState : IProductsState = {
 	error: null
 };
 
-export const productsReducer = (action : IProductsAction, state : IProductsState = initialState) : IProductsState => {
+export const productsReducer = (state : IProductsState = initialState, action : IProductsAction) : IProductsState => {
 	switch (action.type) {
 	case ProductsActionTypes.FETCH_PRODUCTS:
 		return { products: [], loading: true, error: null };
