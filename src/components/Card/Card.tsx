@@ -16,6 +16,7 @@ export interface CardProps {
 }
 
 export const Card: React.FunctionComponent<CardProps> = ({
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	imgUrl,
 	title,
 	ingredientMeter

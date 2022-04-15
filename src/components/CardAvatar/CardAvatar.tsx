@@ -6,6 +6,7 @@ interface CardAvatarProps extends React.ImgHTMLAttributes<HTMLElement> {
 }
 
 const CardAvatar: React.FunctionComponent<CardAvatarProps> = ({
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	placeholderElement,
 	src,
 	...props

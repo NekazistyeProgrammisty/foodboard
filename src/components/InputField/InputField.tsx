@@ -1,60 +1,40 @@
-import * as React from "react";
+import * as React from 'react';
 
-import "./InputField.css";
-import { ReactComponent as SearchIcon } from "../../images/SearchIcon.svg";
-import { ReactComponent as AddIcon } from "../../images/add.svg";
-import { addProduct } from "../../store/action-creators/products";
-import { useDispatch } from "react-redux";
+import './InputField.css';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../store/action-creators/products';
+import IconField from '../IconField/IconField';
 
 interface IInputFieldProps {
 	placeholder: string;
 	data?: any[];
-	type?: "search" | "add";
+	type?: 'search' | 'add';
 }
 
 const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	placeholder,
 	data,
-	type = "search",
+	type = 'search'
 }) => {
-	const [userValue, setUserValue] = React.useState<string>("");
+	const [userValue, setUserValue] = React.useState<string>('');
 
 	const dispatch = useDispatch();
 
-	const AddProduct = () => {
+	const AddProduct = () : void => {
 		dispatch(addProduct({ title: userValue, count: 1, expirationDays: 1 }));
-		setUserValue("");
+		setUserValue('');
 	};
 
 	const enterPressHandler = (
 		event: React.KeyboardEvent<HTMLInputElement>
-	) => {
-		if (event.key === "Enter") {
+	) : void => {
+		if (event.key === 'Enter') {
 			AddProduct();
 		}
 	};
 
-	const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) : void => {
 		setUserValue(event.target.value);
-	};
-
-	const IconField = () => {
-		switch (type) {
-			case "search":
-				return (
-					<div className="inputIcon searchIcon">
-						<SearchIcon />
-					</div>
-				);
-			case "add":
-				return (
-					<div onClick={AddProduct} className="inputIcon addIcon">
-						<AddIcon />
-					</div>
-				);
-			default:
-				return;
-		}
 	};
 
 	return (
@@ -62,14 +42,14 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 			<div className="searchInputs">
 				<input
 					onKeyUp={enterPressHandler}
-					type={"text"}
+					type="text"
 					onChange={userInputHandler}
 					value={userValue}
 					placeholder={placeholder}
 				/>
-				{IconField()}
+				<IconField type={type} clickHandler={AddProduct} />
 			</div>
-			<div className="dataResult"></div>
+			<div className="dataResult" />
 		</div>
 	);
 };
