@@ -1,5 +1,5 @@
 .search {
-    width: 40%;
+    width: 45%;
 }
 
 .searchInputs {
@@ -44,7 +44,7 @@ input[type='text']:focus {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .search {
         width: 80%;
     }
