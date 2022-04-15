@@ -41,7 +41,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 		<div className="search">
 			<div className="searchInputs">
 				<input
-					onKeyUp={enterPressHandler}
+					onKeyUp={(type === 'add') ? enterPressHandler : undefined}
 					type="text"
 					onChange={userInputHandler}
 					value={userValue}

@@ -4,6 +4,7 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { fetchProducts } from '../../store/action-creators/products';
+import ProductElement from '../ProductElement/ProductElement';
 
 const ProductsList: React.FunctionComponent = () => {
 	const { products, error, loading } = useTypedSelector(
@@ -27,7 +28,12 @@ const ProductsList: React.FunctionComponent = () => {
 			)}
 
 			{products.map((product, index) => (
-				<div key={index}>{product.title}</div>
+				<ProductElement
+					key={index}
+					title={product.title}
+					count={product.count}
+					expirationDays={product.expirationDays}
+				/>
 			))}
 		</>
 	);

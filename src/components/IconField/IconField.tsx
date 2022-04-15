@@ -5,7 +5,7 @@ import { ReactComponent as SearchIcon } from '../../images/SearchIcon.svg';
 import { ReactComponent as AddIcon } from '../../images/add.svg';
 
 interface IIconFieldProps {
-	type?: 'search' | 'add';
+	type?: 'search' | 'add' | 'delete';
 	clickHandler?: () => void;
 }
 
@@ -29,6 +29,17 @@ const IconField: React.FunctionComponent<IIconFieldProps> = ({
 				className="inputIcon addIcon"
 			>
 				<AddIcon />
+			</div>
+		);
+	case 'delete':
+		return (
+			<div
+				tabIndex={0}
+				role="button"
+				onClick={clickHandler}
+				className="inputIcon deleteIcon"
+			>
+				<AddIcon style={{ transform: 'rotate(45deg)' }} />
 			</div>
 		);
 	default:
