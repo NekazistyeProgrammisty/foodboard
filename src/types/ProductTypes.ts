@@ -1,4 +1,4 @@
-import { ILoadable } from "./PublicTypes"
+import { ILoadable } from './PublicTypes';
 
 export interface IProduct {
     title: string,

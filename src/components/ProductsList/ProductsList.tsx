@@ -4,10 +4,11 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { fetchProducts } from '../../store/action-creators/products';
+import { IProductsState } from '../../types/ProductTypes';
 import ProductElement from '../ProductElement/ProductElement';
 
 const ProductsList: React.FunctionComponent = () => {
-	const { products, error, loading } = useTypedSelector(
+	const { products, error, loading } = useTypedSelector<IProductsState>(
 		(store) => store.products
 	);
 

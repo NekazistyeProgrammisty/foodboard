@@ -1,23 +1,22 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
-import "./FooterElement.css";
+import './FooterElement.css';
 
 interface FooterElementProps {
 	children: React.ReactNode;
 	text: string;
 }
 
-const FooterElement: React.FunctionComponent<FooterElementProps> = (props) => {
-	return (
+const FooterElement: React.FunctionComponent<FooterElementProps> =
+	({ text, children }) => (
 		<Link
-			to={`/${props.text.toLowerCase().replace(" ", "")}`}
+			to={`/${text.toLowerCase().replace(' ', '')}`}
 			className="footer-element"
 		>
-			{props.children}
-			<span>{props.text}</span>
+			{children}
+			<span>{text}</span>
 		</Link>
 	);
-};
 
 export default FooterElement;
