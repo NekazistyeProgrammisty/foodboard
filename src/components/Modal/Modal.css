@@ -19,13 +19,12 @@
 }
 
 .modal__content {
-    padding-top: 20px;
+    padding: 12px;
     border-radius: 10px;
     background-color: var(--primarybackgroundcolor);
-    height: 200px;
-    width: 400px;
     transform: scale(0.5);
     transition: 0.25s;
+    max-width: 95%;
 }
 
 .modal__content.active {

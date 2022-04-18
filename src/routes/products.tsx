@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { footerSections } from '../App';
+import Card from '../components/Card/Card';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import InputField from '../components/InputField/InputField';
@@ -18,7 +19,9 @@ const ProductsPage: React.FunctionComponent = () => {
 				<InputField placeholder={"Type a product's name..."} type="add" />
 				Посмотрите в консоль: я интегрировал Redux)))))))))))
 				<ProductsList />
-				<Modal active={active} setActive={setActive} />
+				<Modal active={active} setActive={setActive}>
+					<Card title="Pososi" imgUrl="" ingredientMeter={[1, 2]} />
+				</Modal>
 			</main>
 			<Footer sections={footerSections} />
 		</>
