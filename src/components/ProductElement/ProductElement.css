@@ -14,6 +14,11 @@
     justify-content: space-between;
 }
 
+.product-info:hover {
+    background-color: #d8d8d860;
+    cursor: pointer;
+}
+
 @media (max-width: 700px) {
     .product-wrapper {
         width: 80%;
