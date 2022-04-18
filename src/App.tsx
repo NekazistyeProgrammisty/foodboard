@@ -33,6 +33,7 @@ const App: React.FC = () => {
 					<br />
 					огромным количеством доступного функционала!
 				</span>
+
 			</main>
 			<Footer sections={footerSections} />
 		</>

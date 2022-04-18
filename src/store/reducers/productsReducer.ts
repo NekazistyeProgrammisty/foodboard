@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable default-param-last */
 import { IProductsAction, IProductsState, ProductsActionTypes } from '../../types/ProductTypes';
 
