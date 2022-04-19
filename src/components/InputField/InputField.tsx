@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import './InputField.css';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import { addProduct } from '../../store/action-creators/products';
 import IconField from '../IconField/IconField';
 
@@ -32,6 +33,17 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 			AddProduct();
 		}
 	};
+
+	React.useEffect(() => {
+		axios.get<string, any>(
+			`https://speller.yandex.net/services/spellservice.json/checkText?text=${userValue}`
+		).then((resp) => {
+			const text = resp?.data[0]?.s[0];
+			if (text) {
+				console.log(resp?.data[0]?.s[0]);
+			}
+		});
+	}, [userValue]);
 
 	const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) : void => {
 		setUserValue(event.target.value);
