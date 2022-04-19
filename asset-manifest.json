@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/foodboard/static/css/main.b2c3225d.css",
-    "main.js": "/foodboard/static/js/main.88f9c583.js",
+    "main.js": "/foodboard/static/js/main.fbb19ca1.js",
     "static/media/bliny.png": "/foodboard/static/media/bliny.595a7491392e69414c84.png",
     "static/media/Grocery.svg": "/foodboard/static/media/Grocery.b06d8514e813c66da3bf5632e1b2302f.svg",
     "static/media/Products.svg": "/foodboard/static/media/Products.c151263856f6170e590301a698c796ad.svg",
     "static/media/Sparkles.svg": "/foodboard/static/media/Sparkles.072a54b967cbd1cee6a5c519d0abe45f.svg",
     "static/media/RecipeBook.svg": "/foodboard/static/media/RecipeBook.939bbb39d2feddc44fef4ebba0c9639e.svg",
+    "static/media/Delete.svg": "/foodboard/static/media/Delete.b2873fc7fcfe89267c9c0ba6d62fd912.svg",
     "static/media/add.svg": "/foodboard/static/media/add.e20567ba87c58640a71589b4ddec1bf4.svg",
     "index.html": "/foodboard/index.html",
     "static/media/Heart.svg": "/foodboard/static/media/Heart.fadc4c60ff64429cd2bbaee7ffadb1f2.svg",
@@ -14,10 +15,10 @@
     "static/media/User.svg": "/foodboard/static/media/User.0e7336f209d03da8f7639814fa8905f5.svg",
     "static/media/turnaround.svg": "/foodboard/static/media/turnaround.9b8916505f04ea78465672cb18367192.svg",
     "main.b2c3225d.css.map": "/foodboard/static/css/main.b2c3225d.css.map",
-    "main.88f9c583.js.map": "/foodboard/static/js/main.88f9c583.js.map"
+    "main.fbb19ca1.js.map": "/foodboard/static/js/main.fbb19ca1.js.map"
   },
   "entrypoints": [
     "static/css/main.b2c3225d.css",
-    "static/js/main.88f9c583.js"
+    "static/js/main.fbb19ca1.js"
   ]
 }
