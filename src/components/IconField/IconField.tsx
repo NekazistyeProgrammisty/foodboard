@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { ReactComponent as SearchIcon } from '../../images/SearchIcon.svg';
 import { ReactComponent as AddIcon } from '../../images/add.svg';
+import { ReactComponent as RemoveIcon } from '../../images/Delete.svg';
 
 interface IIconFieldProps {
 	type?: 'search' | 'add' | 'delete';
@@ -39,7 +40,7 @@ const IconField: React.FunctionComponent<IIconFieldProps> = ({
 				onClick={clickHandler}
 				className="inputIcon deleteIcon"
 			>
-				<AddIcon style={{ transform: 'rotate(45deg)' }} />
+				<RemoveIcon />
 			</div>
 		);
 	default:
