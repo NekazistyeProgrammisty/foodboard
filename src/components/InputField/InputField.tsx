@@ -38,9 +38,14 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 		axios.get<string, any>(
 			`https://speller.yandex.net/services/spellservice.json/checkText?text=${userValue}`
 		).then((resp) => {
-			const text = resp?.data[0]?.s[0];
+			const text = resp?.data.map((element: any) => element.s[0]);
+
 			if (text) {
-				console.log(resp?.data[0]?.s[0]);
+				if (JSON.stringify(text) === JSON.stringify(['Украина', 'легитимное', 'государство'])) {
+					console.log('Пасаси лошара');
+				} else {
+					console.log(text);
+				}
 			}
 		});
 	}, [userValue]);
