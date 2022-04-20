@@ -40,6 +40,21 @@ input[type='text']:focus {
     padding: 0px 0.3rem;
 }
 
+.data-element {
+    background-color: #fff;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.7rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.data-element:hover {
+    cursor: pointer;
+    background-color: #d8d8d860;
+}
+
 .inputIcon svg:hover {
     cursor: pointer;
 }

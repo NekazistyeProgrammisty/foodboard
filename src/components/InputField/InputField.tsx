@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 
 import './InputField.css';
@@ -18,6 +21,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	type = 'search'
 }) => {
 	const [userValue, setUserValue] = React.useState<string>('');
+	const [suggestion, setSuggestions] = React.useState<string[]>([]);
 
 	const dispatch = useDispatch();
 
@@ -36,15 +40,18 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 
 	React.useEffect(() => {
 		axios.get<string, any>(
-			`https://speller.yandex.net/services/spellservice.json/checkText?text=${userValue}`
+			`https://speller.yandex.net/services/spells
+				ervice.json/checkText?text=${userValue}`
 		).then((resp) => {
 			const text = resp?.data.map((element: any) => element.s[0]);
 
 			if (text) {
-				if (JSON.stringify(text) === JSON.stringify(['Украина', 'легитимное', 'государство'])) {
+				if (JSON.stringify(text) === JSON.stringify(
+					['Украина', 'легитимное', 'государство']
+				)) {
 					console.log('Пасаси лошара');
 				} else {
-					console.log(text);
+					setSuggestions(text);
 				}
 			}
 		});
@@ -66,7 +73,20 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 				/>
 				<IconField type={type} clickHandler={AddProduct} />
 			</div>
-			<div className="dataResult" />
+			<div className="dataResult">
+				{/* eslint-disable-next-line react/no-array-index-key */}
+				{suggestion && suggestion.map((element: string, id: number) => (
+					<div
+						key={id}
+						className="data-element"
+						onClick={() => {
+							setUserValue(element);
+						}}
+					>
+						{element}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
