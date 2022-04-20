@@ -15,7 +15,7 @@ const ProductsList: React.FunctionComponent = () => {
 	const dispatch = useDispatch();
 
 	React.useEffect(() => {
-		dispatch(fetchProducts());
+		if (products.length === 0) dispatch(fetchProducts());
 	}, [dispatch]);
 
 	return (
