@@ -1,5 +1,7 @@
 .search {
     width: 45%;
+    color: #2A2237;
+    font-size: 0.95rem;
 }
 
 .searchInputs {
@@ -7,6 +9,7 @@
 }
 
 input[type='text'] {
+    font-size: 0.95rem;
     width: 100%;
     margin-bottom: 0.75rem;
     height: 2.2rem;
@@ -53,6 +56,7 @@ input[type='text']:focus {
 .data-element:hover {
     cursor: pointer;
     background-color: #d8d8d860;
+    color: var(--secondarytxtcolorhovered);
 }
 
 .inputIcon svg:hover {

@@ -68,3 +68,9 @@ export const addProduct = (product: IProduct) => async (dispatch : Dispatch<IPro
 		dispatch({ type: ProductsActionTypes.FETCH_PRODUCTS_ERROR, payload: "Chto-to slomalos', pososi!!!" });
 	}
 };
+
+export const removeProduct = (index: number) => async (
+	dispatch : Dispatch<IProductsAction>
+) => {
+	dispatch({ type: ProductsActionTypes.REMOVE_PRODUCT, payload: index });
+};

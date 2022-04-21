@@ -10,7 +10,8 @@ export enum ProductsActionTypes {
     FETCH_PRODUCTS = 'FETCH_PRODUCTS',
     FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS',
     FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR',
-    ADD_PRODUCT = 'ADD_PRODUCT'
+    ADD_PRODUCT = 'ADD_PRODUCT',
+    REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 }
 
 export interface IProductsState extends ILoadable {
@@ -36,4 +37,15 @@ interface IFetchProductsErrorAction {
     payload: string
 }
 
-export type IProductsAction = IFetchProductsAction | IFetchProductsSuccessAction | IFetchProductsErrorAction | IAddProductsAction
+interface IRemoveProductsAction {
+    type: ProductsActionTypes.REMOVE_PRODUCT,
+    // index of product in store
+    payload: number
+}
+
+// eslint-disable-next-line no-multi-spaces
+export type IProductsAction =   IFetchProductsAction |
+                                IFetchProductsSuccessAction |
+                                IFetchProductsErrorAction |
+                                IAddProductsAction |
+                                IRemoveProductsAction

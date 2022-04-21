@@ -4,11 +4,18 @@ import CardHolder from '../components/CardHolder/CardHolder';
 import Container from '../components/Container/Container';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
+import InputField from '../components/InputField/InputField';
 
 const RecipesListPage: React.FunctionComponent = () => (
 	<>
 		<Header />
-		<Container content={<CardHolder />} />
+		<Container content={(
+			<>
+				<InputField placeholder="Search for recipes..." />
+				<CardHolder />
+			</>
+		)}
+		/>
 		<Footer sections={footerSections} />
 	</>
 );

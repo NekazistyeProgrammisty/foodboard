@@ -31,6 +31,7 @@ const ProductsList: React.FunctionComponent = () => {
 			{products.map((product, index) => (
 				<ProductElement
 					key={index}
+					index={index}
 					title={product.title}
 					count={product.count}
 					expirationDays={product.expirationDays}

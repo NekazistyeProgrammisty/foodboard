@@ -9,6 +9,8 @@
     --buttonbg: #F6E0B5;
     --cardwidth: 11rem;
     --cardlength: 13.75rem;
+    --secondarytxtcolor: #24202b;
+    --secondarytxtcolorhovered: #252329;
 }
 
 @media (min-width: 950px) {

@@ -26,8 +26,10 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	const dispatch = useDispatch();
 
 	const AddProduct = () : void => {
-		dispatch(addProduct({ title: userValue, count: 1, expirationDays: 1 }));
-		setUserValue('');
+		if (userValue.trim().length) {
+			dispatch(addProduct({ title: userValue, count: 1, expirationDays: 1 }));
+			setUserValue('');
+		}
 	};
 
 	const enterPressHandler = (
@@ -41,7 +43,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	React.useEffect(() => {
 		axios.get<string, any>(
 			`https://speller.yandex.net/services/spells
-				ervice.json/checkText?text=${userValue}`
+				ervice.json/checkText?text=${userValue.trim()}`
 		).then((resp) => {
 			const text = resp?.data.map((element: any) => element.s[0]);
 
