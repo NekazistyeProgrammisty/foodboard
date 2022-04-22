@@ -77,17 +77,16 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 			</div>
 			<div className="dataResult">
 				{/* eslint-disable-next-line react/no-array-index-key */}
-				{suggestion && suggestion.map((element: string, id: number) => (
+				{suggestion.length !== 0 && (() => (
 					<div
-						key={id}
 						className="data-element"
 						onClick={() => {
-							setUserValue(element);
+							setUserValue(suggestion.join(' ').trim());
 						}}
 					>
-						{element}
+						{suggestion.join(' ').trim()}
 					</div>
-				))}
+				))()}
 			</div>
 		</div>
 	);
