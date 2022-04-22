@@ -14,7 +14,7 @@ const CardHolder: React.FunctionComponent = () => {
 		setTimeout(() => {
 			setCurrentList(cardsReqSimulation);
 			// setCardsFetched(true);
-		}, 2000);
+		}, 500);
 	}, []);
 
 	return (

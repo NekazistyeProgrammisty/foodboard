@@ -2,7 +2,11 @@ import * as React from 'react';
 
 import './Header.css';
 
-const Header: React.FC = () => (
+interface IHeaderProps {
+	title?: string
+}
+
+const Header: React.FC<IHeaderProps> = ({ title = 'Рецепты' }) => (
 	<header>
 		<svg
 			width="23"
@@ -30,7 +34,7 @@ const Header: React.FC = () => (
 				strokeLinecap="round"
 			/>
 		</svg>
-		<span className="text-logo">Рецепты</span>
+		<span className="text-logo">{title}</span>
 	</header>
 );
 
