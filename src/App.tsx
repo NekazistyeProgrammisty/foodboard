@@ -2,6 +2,9 @@ import * as React from 'react';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import InputField from './components/InputField/InputField';
+import Wrapper from './components/Wrapper/Wrapper';
+import Button from './components/Button/Button';
 
 export const footerSections = [
 	'Feed',
@@ -14,7 +17,6 @@ export const footerSections = [
 const App: React.FC = () => {
 	const styles = {
 		color: '#bbb',
-		justifyContent: 'center',
 		paddingTop: '4.5rem',
 		paddingBottom: 0,
 		alignItems: 'center',
@@ -26,14 +28,11 @@ const App: React.FC = () => {
 			<Header />
 			{/* <Container /> */}
 			<main className="container" style={styles}>
-				<span style={{ textAlign: 'center' }}>
-					Здрасьте.
-					<br />
-					Тыкайте кнопки в футере, и восхищайтесь
-					<br />
-					огромным количеством доступного функционала!
-				</span>
-
+				<Wrapper>
+					<InputField placeholder="Ваш логин" />
+					<InputField placeholder="Пароль" type="password" />
+					<Button text="Пососи" />
+				</Wrapper>
 			</main>
 			<Footer sections={footerSections} />
 		</>

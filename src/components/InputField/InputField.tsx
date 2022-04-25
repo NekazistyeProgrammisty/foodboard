@@ -12,13 +12,13 @@ import IconField from '../IconField/IconField';
 interface IInputFieldProps {
 	placeholder: string;
 	data?: any[];
-	type?: 'search' | 'add';
+	type?: 'search' | 'add' | 'delete' | 'password';
 }
 
 const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	placeholder,
 	data,
-	type = 'search'
+	type
 }) => {
 	const [userValue, setUserValue] = React.useState<string>('');
 	const [suggestion, setSuggestions] = React.useState<string[]>([]);
@@ -40,7 +40,7 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 		}
 	};
 
-	React.useEffect(() => {
+	const spellerCall = () : void => {
 		axios.get<string, any>(
 			`https://speller.yandex.net/services/spells
 				ervice.json/checkText?text=${userValue.trim()}`
@@ -57,23 +57,37 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 				}
 			}
 		});
-	}, [userValue]);
+	};
+
+	React.useEffect(() => {
+		if (type !== 'password' || type) {
+			spellerCall();
+		}
+	}, [userValue, type]);
 
 	const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) : void => {
 		setUserValue(event.target.value);
 	};
 
+	const inputClass = `${(type && (type !== 'password')) ? '' : 'smooth'}`;
+
+	const searchClass = `${(type && (type !== 'password')) ? 'search' : 'search full'}`;
+
 	return (
-		<div className="search">
+		<div className={searchClass}>
 			<div className="searchInputs">
 				<input
 					onKeyUp={(type === 'add') ? enterPressHandler : undefined}
-					type="text"
+					type={`${type === 'password' ? 'password' : 'text'}`}
 					onChange={userInputHandler}
 					value={userValue}
 					placeholder={placeholder}
+					className={inputClass}
 				/>
-				<IconField type={type} clickHandler={AddProduct} />
+				{
+					(type && type !== 'password') &&
+					<IconField type={type} clickHandler={AddProduct} />
+				}
 			</div>
 			<div className="dataResult">
 				{/* eslint-disable-next-line react/no-array-index-key */}
