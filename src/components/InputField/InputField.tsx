@@ -13,12 +13,14 @@ interface IInputFieldProps {
 	placeholder: string;
 	data?: any[];
 	type?: 'search' | 'add' | 'delete' | 'password';
+	outerInputHandler?: (newValue: string) => void;
 }
 
 const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	placeholder,
 	data,
-	type
+	type,
+	outerInputHandler
 }) => {
 	const [userValue, setUserValue] = React.useState<string>('');
 	const [suggestion, setSuggestions] = React.useState<string[]>([]);
@@ -60,13 +62,16 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	};
 
 	React.useEffect(() => {
-		if (type !== 'password' || type) {
+		if (type !== 'password' && type) {
 			spellerCall();
 		}
 	}, [userValue, type]);
 
 	const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) : void => {
 		setUserValue(event.target.value);
+		if (outerInputHandler) {
+			outerInputHandler(event.target.value);
+		}
 	};
 
 	const inputClass = `${(type && (type !== 'password')) ? '' : 'smooth'}`;

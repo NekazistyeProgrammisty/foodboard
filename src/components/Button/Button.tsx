@@ -3,7 +3,7 @@ import './Button.css';
 
 interface IButtonProps {
     text: string
-    clickHandler?: void
+    clickHandler?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
 const Button: React.FunctionComponent<IButtonProps> = ({ text, clickHandler }) => {
@@ -12,6 +12,7 @@ const Button: React.FunctionComponent<IButtonProps> = ({ text, clickHandler }) =
 		<button
 			type="button"
 			className={buttonClass}
+			onClick={clickHandler}
 		>
 			{text}
 		</button>

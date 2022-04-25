@@ -23,15 +23,30 @@ const App: React.FC = () => {
 		height: 'calc(100% - 9rem)'
 	};
 
+	const [userLogin, setUserLogin] = React.useState<string>('');
+	const [userPassword, setUserPassword] = React.useState<string>('');
+
+	const userLoginChangeHandler = (login: string) : void => {
+		setUserLogin(login);
+	};
+
+	const userPasswordChangeHandler = (password: string) : void => {
+		setUserPassword(password);
+	};
+
 	return (
 		<>
 			<Header />
 			{/* <Container /> */}
 			<main className="container" style={styles}>
 				<Wrapper>
-					<InputField placeholder="Ваш логин" />
-					<InputField placeholder="Пароль" type="password" />
-					<Button text="Пососи" />
+					<InputField outerInputHandler={userLoginChangeHandler} placeholder="Ваш логин" />
+					<InputField outerInputHandler={userPasswordChangeHandler} placeholder="Пароль" type="password" />
+					<Button text="Войти" />
+
+					{userLogin}
+					<br />
+					{userPassword}
 				</Wrapper>
 			</main>
 			<Footer sections={footerSections} />
