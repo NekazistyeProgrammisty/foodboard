@@ -6,7 +6,7 @@ import { ReactComponent as AddIcon } from '../../images/add.svg';
 import { ReactComponent as RemoveIcon } from '../../images/Delete.svg';
 
 interface IIconFieldProps {
-	type?: 'search' | 'add' | 'delete';
+	type?: 'search' | 'add' | 'delete' | 'password';
 	clickHandler?: () => void;
 }
 

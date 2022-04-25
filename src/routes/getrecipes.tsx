@@ -11,7 +11,7 @@ const RecipesListPage: React.FunctionComponent = () => (
 		<Header />
 		<Container content={(
 			<>
-				<InputField placeholder="Search for recipes..." />
+				<InputField type="search" placeholder="Search for recipes..." />
 				<CardHolder />
 			</>
 		)}
