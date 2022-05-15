@@ -1,36 +1,41 @@
 /* eslint-disable react/no-array-index-key */
 import * as React from 'react';
+import axios from 'axios';
 import Card, { CardProps } from '../Card/Card';
-import cardsReqSimulation from '../../API/cardsReqSimulation.json';
 import SkeletonCard from '../Skeletons/Cards/SkeletonCard';
 
 import './CardHolder.css';
 
 const CardHolder: React.FunctionComponent = () => {
 	const [currentList, setCurrentList] = React.useState<CardProps[]>([]);
-	// const [cardsFetched, setCardsFetched] = React.useState<boolean>(false);
+	const [cardsFetched, setCardsFetched] = React.useState<boolean>(false);
 
 	React.useEffect(() => {
-		setTimeout(() => {
-			setCurrentList(cardsReqSimulation);
-			// setCardsFetched(true);
-		}, 500);
+		axios.get(
+			'http://83.220.168.143:8081/profile/2/user_products/get_recipes'
+		).then((res) => {
+			console.log(res.data);
+			setCurrentList(res.data);
+			setCardsFetched(true);
+		});
 	}, []);
 
 	return (
 		<div className="grid-cardholder">
-			{!currentList.length &&
-				[...Array(40).keys()].map((elment, id) => (
+			{!cardsFetched &&
+				[...Array(20).keys()].map((elment, id) => (
 					<SkeletonCard key={id} />
 				))}
 
-			{currentList.length &&
+			{cardsFetched &&
 				currentList.map((element, id) => (
 					<Card
-						key={id}
-						title={element.title}
-						imgUrl={element.imgUrl}
-						ingredientMeter={element.ingredientMeter}
+						key={id || 0}
+						title={element.title || ''}
+						imgLink={element.imgLink || ''}
+						ingredientMeter={[Math.trunc(Math.random() * (element.productsNum || 4)), 2] || ''}
+						category={element.category || ''}
+						productsNum={element.productsNum || 0}
 					/>
 				))}
 		</div>

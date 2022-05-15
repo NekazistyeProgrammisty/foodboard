@@ -1,5 +1,6 @@
 import * as React from 'react';
 import SkeletonAvatar from '../Skeletons/Avatar/SkeletonAvatar';
+import './CardAvatar.css';
 
 interface CardAvatarProps extends React.ImgHTMLAttributes<HTMLElement> {
 	placeholderElement?: React.ReactNode;

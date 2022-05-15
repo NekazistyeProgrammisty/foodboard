@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import './Card.css';
-import bliny2 from '../../images/bliny.png';
 import { ReactComponent as Grocery } from '../../images/Grocery.svg';
 import { ReactComponent as TurnAround } from '../../images/turnaround.svg';
 import CardButton from '../CardButton/CardButton';
@@ -10,18 +9,28 @@ import CardAvatar from '../CardAvatar/CardAvatar';
 // className={`card back ${!flipped ? '' : 'flipped'}`}
 
 export interface CardProps {
-	imgUrl: string;
+	imgLink: string;
 	title: string;
 	ingredientMeter: number[];
+	recipeId?: number,
+	description?: string,
+	productsNum?: number,
+	category: string
 }
 
 export const Card: React.FunctionComponent<CardProps> = ({
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	imgUrl,
+	imgLink,
 	title,
-	ingredientMeter
+	ingredientMeter,
+	description,
+	category,
+	productsNum,
+	recipeId
 }) => {
 	const [flipped, setFlipped] = React.useState<boolean>(false);
+
+	const [displayTitle, setDisplayTitle] = React.useState<string>(title.length > 40 ? (`${title.substring(0, 37)}...`) : title);
 
 	const RETURN_TIMEOUT = 0;
 
@@ -37,13 +46,13 @@ export const Card: React.FunctionComponent<CardProps> = ({
 		}
 	}, [flipped]);
 
-	const amountMeter = `${ingredientMeter[0]} / ${ingredientMeter[1]}`;
+	const amountMeter = `${ingredientMeter[0]} / ${productsNum}`;
 
 	return (
 		<div className={`card-wrapper ${flipped ? 'flipped' : ''}`}>
 			<div className="card front">
-				<CardAvatar src={bliny2} />
-				<p className="card-title">{title}</p>
+				<CardAvatar src={imgLink} />
+				<p className="card-title">{displayTitle}</p>
 				<div className="lower-card-container">
 					<CardButton isSecond={false}>
 						<Grocery />
@@ -58,9 +67,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
 				<div className="back-text-wrapper">
 					<p className="card-back-title">{title}</p>
 					<div className="card-back-description">
-						Еслиб я имел коня - это был бы номер...
-						<br />
-						Еслиб конь имел меня - я б, наверно, помер...
+						{description}
 					</div>
 				</div>
 				<div className="lower-card-container">
