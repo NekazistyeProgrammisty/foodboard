@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { addProduct } from '../../store/action-creators/products';
 import IconField from '../IconField/IconField';
+import useDebounce from '../../hooks/useDebounce';
 
 interface IInputFieldProps {
 	placeholder: string;
@@ -24,6 +25,8 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 }) => {
 	const [userValue, setUserValue] = React.useState<string>('');
 	const [suggestion, setSuggestions] = React.useState<string[]>([]);
+
+	const debouncedValue = useDebounce(userValue, 500);
 
 	const dispatch = useDispatch();
 
@@ -42,10 +45,10 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 		}
 	};
 
-	const spellerCall = () : void => {
+	const spellerCall = (value: string) : void => {
 		axios.get<string, any>(
 			`https://speller.yandex.net/services/spells
-				ervice.json/checkText?text=${userValue.trim()}`
+				ervice.json/checkText?text=${value.trim()}`
 		).then((resp) => {
 			const text = resp?.data.map((element: any) => element.s[0]);
 
@@ -62,10 +65,12 @@ const InputField: React.FunctionComponent<IInputFieldProps> = ({
 	};
 
 	React.useEffect(() => {
+		console.log('Changed');
+
 		if (type !== 'password' && type) {
-			spellerCall();
+			spellerCall(String(debouncedValue));
 		}
-	}, [userValue, type]);
+	}, [debouncedValue]);
 
 	const userInputHandler = (event: React.ChangeEvent<HTMLInputElement>) : void => {
 		setUserValue(event.target.value);

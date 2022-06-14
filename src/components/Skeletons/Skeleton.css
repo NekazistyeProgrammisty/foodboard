@@ -36,6 +36,7 @@
 .skeleton.button {
     width: 30px;
     height: 30px;
+    min-height: 30px !important;
     border-radius: 50%;
 }
 
