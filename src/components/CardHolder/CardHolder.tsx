@@ -30,10 +30,17 @@ const CardHolder: React.FunctionComponent = () => {
 			{cardsFetched &&
 				currentList.map((element, id) => (
 					<Card
+						recipeId={element.recipeId}
 						key={id || 0}
 						title={element.title || ''}
 						imgLink={element.imgLink || ''}
-						ingredientMeter={[Math.trunc(Math.random() * (element.productsNum || 4)), 2] || ''}
+						ingredientMeter={
+							[
+								Math.trunc(Math.random() * (element.productsNum || 4)),
+								2
+							] || ''
+						}
+						description={element.description}
 						category={element.category || ''}
 						productsNum={element.productsNum || 0}
 					/>

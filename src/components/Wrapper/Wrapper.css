@@ -4,6 +4,12 @@
     padding: 12px;
     background-color: #f8f8f8;
     min-height: 20%;
-    min-width: 25%;
+    min-width: 50%;
     flex-direction: column;
+}
+
+@media screen and (min-width: 1000px) {
+    .scalable-input {
+        min-width: 25%;
+    }
 }

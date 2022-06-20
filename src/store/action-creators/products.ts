@@ -47,30 +47,43 @@ const fakeResponseFromApi : IProductsState = {
 	loading: false
 };
 
-export const fetchProducts = () => async (dispatch : Dispatch<IProductsAction>) => {
-	try {
-		dispatch({ type: ProductsActionTypes.FETCH_PRODUCTS });
+export const fetchProducts =
+	() => async (dispatch: Dispatch<IProductsAction>) => {
+		try {
+			dispatch({ type: ProductsActionTypes.FETCH_PRODUCTS });
 
-		setTimeout(() => {
-			dispatch({ type: ProductsActionTypes.FETCH_PRODUCTS_SUCCESS, payload: fakeResponseFromApi.products });
-		}, 500);
-	} catch (error) {
-		dispatch({ type: ProductsActionTypes.FETCH_PRODUCTS_ERROR, payload: "Chto-to slomalos', pososi!!!" });
-	}
-};
+			setTimeout(() => {
+				dispatch({
+					type: ProductsActionTypes.FETCH_PRODUCTS_SUCCESS,
+					payload: fakeResponseFromApi.products
+				});
+			}, 500);
+		} catch (error) {
+			dispatch({
+				type: ProductsActionTypes.FETCH_PRODUCTS_ERROR,
+				payload: "Chto-to slomalos', pososi!!!"
+			});
+		}
+	};
 
-export const addProduct = (product: IProduct) => async (dispatch : Dispatch<IProductsAction>) => {
-	try {
-		setTimeout(() => {
-			dispatch({ type: ProductsActionTypes.ADD_PRODUCT, payload: product });
-		}, 50);
-	} catch (error) {
-		dispatch({ type: ProductsActionTypes.FETCH_PRODUCTS_ERROR, payload: "Chto-to slomalos', pososi!!!" });
-	}
-};
+export const addProduct =
+	(product: IProduct) => async (dispatch: Dispatch<IProductsAction>) => {
+		try {
+			setTimeout(() => {
+				dispatch({
+					type: ProductsActionTypes.ADD_PRODUCT,
+					payload: product
+				});
+			}, 50);
+		} catch (error) {
+			dispatch({
+				type: ProductsActionTypes.FETCH_PRODUCTS_ERROR,
+				payload: "Chto-to slomalos', pososi!!!"
+			});
+		}
+	};
 
-export const removeProduct = (index: number) => async (
-	dispatch : Dispatch<IProductsAction>
-) => {
-	dispatch({ type: ProductsActionTypes.REMOVE_PRODUCT, payload: index });
-};
+export const removeProduct =
+	(index: number) => async (dispatch: Dispatch<IProductsAction>) => {
+		dispatch({ type: ProductsActionTypes.REMOVE_PRODUCT, payload: index });
+	};

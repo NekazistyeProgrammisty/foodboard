@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import * as React from 'react';
 
 import './Card.css';
@@ -30,7 +31,9 @@ export const Card: React.FunctionComponent<CardProps> = ({
 }) => {
 	const [flipped, setFlipped] = React.useState<boolean>(false);
 
-	const [displayTitle, setDisplayTitle] = React.useState<string>(title.length > 40 ? (`${title.substring(0, 37)}...`) : title);
+	const [displayTitle, setDisplayTitle] = React.useState<string>(
+		title.length > 40 ? `${title.substring(0, 37)}...` : title
+	);
 
 	const RETURN_TIMEOUT = 0;
 
@@ -66,9 +69,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
 			<div className="card back">
 				<div className="back-text-wrapper">
 					<p className="card-back-title">{title}</p>
-					<div className="card-back-description">
-						{description}
-					</div>
+					<div className="card-back-description">{description}</div>
 				</div>
 				<div className="lower-card-container">
 					<CardButton clickHandler={flipHandler} isSecond>

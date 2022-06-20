@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { footerSections } from '../App';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import InputField from '../components/InputField/InputField';
@@ -13,7 +12,6 @@ const ProductsPage: React.FunctionComponent = () => (
 			Посмотрите в консоль: я интегрировал Redux)))))))))))
 			<ProductsList />
 		</main>
-		<Footer sections={footerSections} />
 	</>
 );
 export default ProductsPage;
