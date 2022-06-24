@@ -1,20 +1,20 @@
 .grid-cardholder {
     display: grid;
-    grid-template-columns: var(--cardwidth) var(--cardwidth) var(--cardwidth);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     grid-gap: 20px;
 }
 
 @media (max-width: 660px) {
     .grid-cardholder {
-        grid-template-columns: var(--cardwidth) var(--cardwidth);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 25px;
     }
 }
 
 @media (min-width: 950px) {
     .grid-cardholder {
-        grid-template-columns: var(--cardwidth) var(--cardwidth) var(--cardwidth) var(--cardwidth);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;
     }
 }
