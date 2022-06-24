@@ -16,18 +16,11 @@ const ProductsList: React.FunctionComponent = () => {
 
 	React.useEffect(() => {
 		if (products.length === 0) dispatch(fetchProducts());
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dispatch]);
 
 	return (
 		<>
-			{loading ? (
-				<h1>Идёт загрузка</h1>
-			) : error ? (
-				<h1> Пососи!!! </h1>
-			) : (
-				<h3>Вот это - типа хранилище продуктов пользователя</h3>
-			)}
-
 			{products.map((product, index) => (
 				<ProductElement
 					key={index}
