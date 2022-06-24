@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { IoChevronBackOutline } from 'react-icons/io5';
 
 import './Header.css';
 
@@ -8,32 +9,7 @@ interface IHeaderProps {
 
 const Header: React.FC<IHeaderProps> = ({ title = 'Рецепты' }) => (
 	<header>
-		<svg
-			width="23"
-			height="16"
-			viewBox="0 0 23 16"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M1 1H22"
-				stroke="#F6E0B5"
-				strokeWidth="2"
-				strokeLinecap="round"
-			/>
-			<path
-				d="M1 8H22"
-				stroke="#F6E0B5"
-				strokeWidth="2"
-				strokeLinecap="round"
-			/>
-			<path
-				d="M1 15H22"
-				stroke="#F6E0B5"
-				strokeWidth="2"
-				strokeLinecap="round"
-			/>
-		</svg>
+		<IoChevronBackOutline size={32} />
 		<span className="text-logo">{title}</span>
 	</header>
 );
