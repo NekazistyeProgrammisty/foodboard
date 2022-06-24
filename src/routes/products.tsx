@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import InputField from '../components/InputField/InputField';
 import ProductsList from '../components/ProductsList/ProductsList';

@@ -2,10 +2,10 @@ import * as React from 'react';
 import './Container.css';
 
 interface ContainerProps {
-	content?: React.ReactNode | null;
+	children?: React.ReactNode | null;
 }
 
 const Container: React.FunctionComponent<ContainerProps> =
-	({ content }) => <main className="container">{content}</main>;
+	({ children }) => <main className="container">{children}</main>;
 
 export default Container;
