@@ -1,7 +1,12 @@
 import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+	BrowserRouter,
+	Route,
+	Routes,
+	Navigate
+} from 'react-router-dom';
 
 import { store } from './store/store';
 import App from './routes/LoginPage';
@@ -25,11 +30,16 @@ export const footerSections = [
 	'Favorite'
 ];
 
+const loggedIn = false;
+
 root.render(
 	<Provider store={store}>
-
 		<BrowserRouter>
 			<Routes>
+				<Route
+					path="/"
+					element={<Navigate to={!loggedIn ? '/auth' : '/getrecipes'} />}
+				/>
 				<Route path="/auth" element={<App />} />
 				<Route path="/getrecipes" element={<RecipesListPage />} />
 				<Route path="/feed" element={<Feed />} />

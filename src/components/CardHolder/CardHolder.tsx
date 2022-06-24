@@ -14,7 +14,6 @@ const CardHolder: React.FunctionComponent = () => {
 		axios.get(
 			'http://83.220.168.143:8081/profile/2/user_products/get_recipes'
 		).then((res) => {
-			console.log(res.data);
 			setCurrentList(res.data);
 			setCardsFetched(true);
 		});
