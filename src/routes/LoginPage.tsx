@@ -1,12 +1,19 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+
 import Header from '../components/Header/Header';
 import InputField from '../components/InputField/InputField';
 import Wrapper from '../components/Wrapper/Wrapper';
 import Button from '../components/Button/Button';
-
-import './LoginPage.css';
 import StraightLine from '../components/StraightLine/StraightLine';
+
+const InviteLink = styled.div`
+	font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    color: #b73737;
+`;
 
 const LoginPage: React.FC = () => {
 	const [userLogin, setUserLogin] = React.useState<string>('');
@@ -46,9 +53,9 @@ const LoginPage: React.FC = () => {
 					или...
 				</span>
 				<StraightLine />
-				<Link className="invite-link" to="/">
+				<InviteLink as={Link} className="invite-link" to="/">
 					Зарегистрироваться
-				</Link>
+				</InviteLink>
 			</main>
 		</>
 	);
