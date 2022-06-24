@@ -3,8 +3,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import * as React from 'react';
 
-import './CardButton.css';
-
 interface CardButtonProps {
 	children: React.ReactNode | null;
 	isSecond: boolean;
