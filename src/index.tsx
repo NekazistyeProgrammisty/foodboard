@@ -35,7 +35,7 @@ root.render(
 			<BrowserRouter>
 				<Routes>
 					<Route
-						path="/"
+						path="foodboard/"
 						element={(
 							<Navigate
 								to={!loggedIn ? '/auth' : '/getrecipes'}

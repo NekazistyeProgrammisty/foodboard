@@ -2,8 +2,8 @@
 import * as React from 'react';
 
 import './Card.css';
-import { ReactComponent as Grocery } from '../../images/Grocery.svg';
-import { ReactComponent as TurnAround } from '../../images/turnaround.svg';
+import { ReactComponent as Grocery } from '../../assets/images/Grocery.svg';
+import { ReactComponent as TurnAround } from '../../assets/images/turnaround.svg';
 import CardButton from '../CardButton/CardButton';
 import CardAvatar from '../CardAvatar/CardAvatar';
 
