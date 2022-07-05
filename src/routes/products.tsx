@@ -8,7 +8,6 @@ const ProductsPage: React.FunctionComponent = () => (
 		<Header title="Ваши продукты" />
 		<main className="container" style={{ color: '#bbb' }}>
 			<InputField placeholder={"Type a product's name..."} type="add" />
-			Посмотрите в консоль: я интегрировал Redux)))))))))))
 			<ProductsList />
 		</main>
 	</>

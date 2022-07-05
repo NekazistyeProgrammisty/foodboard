@@ -25,10 +25,23 @@
 .card>.card-title {
     display: inline-block;
     font-size: 1.1rem;
+
     color: var(--primarybackgroundcolor);
     margin-top: 3.5% !important;
     margin-left: 2.8%;
+    margin-right: 2.8%;
     font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+
+    /*white-space: nowrap; */
+}
+
+@media screen and (max-width: 700px) {
+    .card>.card-title {
+        font-size: 0.9rem;
+    }  
 }
 
 .lower-card-container {

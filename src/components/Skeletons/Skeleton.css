@@ -38,6 +38,7 @@
     height: 30px;
     min-height: 30px !important;
     border-radius: 50%;
+    margin-left: 0.3rem;
 }
 
 .skeleton.button:hover {

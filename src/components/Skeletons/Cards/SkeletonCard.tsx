@@ -3,6 +3,8 @@ import * as React from 'react';
 import SkeletonElement from '../SkeletonElement';
 import Shimmer from '../Shimmer';
 
+import './SkeletonCard.css';
+
 const SkeletonCard: React.FunctionComponent = () => (
 	<div className="skeleton-wrapper">
 		<div className="card skeleton-card">

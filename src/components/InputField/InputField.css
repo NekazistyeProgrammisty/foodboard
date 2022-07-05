@@ -9,7 +9,7 @@
 }
 
 .full {
-    width: 100%;
+    width: 100% !important;
 }
 
 .searchInputs {
@@ -74,6 +74,9 @@ input[type='text']:focus, input[type='password']:focus {
 @media (max-width: 700px) {
     input[type='text'] {
         font-size: 17px;
+    }
+    .search {
+        width: 80%;
     }
 }
 

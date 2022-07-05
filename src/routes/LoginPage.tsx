@@ -29,7 +29,7 @@ const LoginPage: React.FC = () => {
 
 	return (
 		<>
-			<Header />
+			<Header title="Login" />
 			<main className="container">
 				<Wrapper additionalClassName="scalable-input">
 					<InputField
