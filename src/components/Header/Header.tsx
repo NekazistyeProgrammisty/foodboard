@@ -1,24 +1,30 @@
 import * as React from 'react';
-import { IoChevronBackOutline } from 'react-icons/io5';
-import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-import './Header.css';
+import { IoIosArrowBack } from 'react-icons/io';
 
-interface IHeaderProps {
-  title?: string
-}
+const StyledHeader = styled.header`
+  height: 60px;
+  color: var(--txtcolor);
+  background-color: var(--primarycolor);
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+`;
 
-const Header: React.FC<IHeaderProps> = ({ title = 'Рецепты' }) => {
+export const Header: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
-    <header>
-      <IoChevronBackOutline
-        onClick={() => navigate(-1)}
-        size={32}
-      />
-      <span className="text-logo">{title}</span>
-    </header>
+    <StyledHeader>
+      {
+        location.pathname !== '/' &&
+          <IoIosArrowBack size="40px" onClick={(e) => navigate(-1)} />
+      }
+      <Link to="auth"> Суперкрутой хедер </Link>
+    </StyledHeader>
   );
 };
-
-export default Header;
