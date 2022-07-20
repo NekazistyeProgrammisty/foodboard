@@ -21,9 +21,9 @@
 		"no-use-before-define": "off",
 		"@typescript-eslint/no-use-before-define": ["error"],
 		"react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
-		"no-tabs": ["error", { "allowIndentationTabs": true }],
-		"indent": [2, "tab"],
-		"react/jsx-indent" : ["error", "tab"],
+		"indent": ["error", 2],
+		"react/jsx-indent" : [2, 2, {"indentLogicalExpressions": true}],
+    "react/jsx-indent-props": [2, 2],
 		"comma-dangle": ["error", "never"],
 		"react/function-component-definition": [
 			2,
@@ -32,7 +32,6 @@
 			  "unnamedComponents": "arrow-function"
 			}
 		],
-		"react/jsx-indent-props": [2, "tab"],
 		"import/extensions": [
 			"error",
 			"ignorePackages",
@@ -53,8 +52,8 @@
         "react-hooks/rules-of-hooks": "error",
 		"react/prop-types": "off",
 		"react/require-default-props": "off",
-        "react-hooks/exhaustive-deps": "warn",
-        "import/prefer-default-export": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
 		"operator-linebreak": [2, "after", { "overrides": { "?": "after" } }],
 		"linebreak-style": ["error", "windows"]
         

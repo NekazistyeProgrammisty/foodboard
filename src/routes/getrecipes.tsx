@@ -7,15 +7,15 @@ import Header from '../components/Header/Header';
 import InputField from '../components/InputField/InputField';
 
 const RecipesListPage: React.FunctionComponent = () => (
-	<>
-		<Header />
-		<Container>
-			<>
-				<InputField type="search" placeholder="Search for recipes..." />
-				<CardHolder />
-			</>
-		</Container>
-	</>
+  <>
+    <Header />
+    <Container>
+      <>
+        <InputField type="search" placeholder="Search for recipes..." />
+        <CardHolder />
+      </>
+    </Container>
+  </>
 );
 
 export default RecipesListPage;

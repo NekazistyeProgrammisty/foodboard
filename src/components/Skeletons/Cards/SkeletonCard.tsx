@@ -6,21 +6,21 @@ import Shimmer from '../Shimmer';
 import './SkeletonCard.css';
 
 const SkeletonCard: React.FunctionComponent = () => (
-	<div className="skeleton-wrapper">
-		<div className="card skeleton-card">
-			<SkeletonElement className="avatar" variant="image" />
-			<SkeletonElement className="card-title" variant="title" />
-			<div className="lower-card-container">
-				<SkeletonElement className="card-button" variant="button" />
-				<SkeletonElement className="subtitle" variant="title" />
-				<SkeletonElement
-					className="card-button right-side-button"
-					variant="button"
-				/>
-			</div>
-		</div>
-		<Shimmer />
-	</div>
+  <div className="skeleton-wrapper">
+    <div className="card skeleton-card">
+      <SkeletonElement className="avatar" variant="image" />
+      <SkeletonElement className="card-title" variant="title" />
+      <div className="lower-card-container">
+        <SkeletonElement className="card-button" variant="button" />
+        <SkeletonElement className="subtitle" variant="title" />
+        <SkeletonElement
+          className="card-button right-side-button"
+          variant="button"
+        />
+      </div>
+    </div>
+    <Shimmer />
+  </div>
 );
 
 export default SkeletonCard;

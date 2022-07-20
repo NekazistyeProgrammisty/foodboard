@@ -6,13 +6,13 @@ interface IProductDetailsProps {
 }
 
 const ProductDetails: React.FC<IProductDetailsProps> = () => {
-	const [message, setMessage] = React.useState<string>('pososi');
+  const [message, setMessage] = React.useState<string>('pososi');
 
-	return (
-		<div className="message">
-			{message}
-		</div>
-	);
+  return (
+    <div className="message">
+      {message}
+    </div>
+  );
 };
 
 export default ProductDetails;

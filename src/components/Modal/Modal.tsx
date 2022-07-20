@@ -11,21 +11,21 @@ interface IModalProps {
 }
 
 const Modal: React.FC<IModalProps> = ({ active, setActive, children }) => (
-	<div
-		className={active ? 'modal active' : 'modal'}
-		onClick={() => {
-			setActive(false);
-		}}
-	>
-		<div
-			className={active ? 'modal__content active' : 'modal__content'}
-			onClick={
-				(e) => e.stopPropagation()
-			}
-		>
-			{children}
-		</div>
-	</div>
+  <div
+    className={active ? 'modal active' : 'modal'}
+    onClick={() => {
+      setActive(false);
+    }}
+  >
+    <div
+      className={active ? 'modal__content active' : 'modal__content'}
+      onClick={
+        (e) => e.stopPropagation()
+      }
+    >
+      {children}
+    </div>
+  </div>
 );
 
 export default Modal;

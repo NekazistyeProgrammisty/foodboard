@@ -6,50 +6,50 @@ import { ReactComponent as AddIcon } from '../../assets/images/add.svg';
 import { ReactComponent as RemoveIcon } from '../../assets/images/Delete.svg';
 
 interface IIconFieldProps {
-	type?: 'search' | 'add' | 'delete' | 'password';
-	clickHandler?: () => void;
+  type?: 'search' | 'add' | 'delete' | 'password';
+  clickHandler?: () => void;
 }
 
 const IconField: React.FunctionComponent<IIconFieldProps> = ({
-	type = 'search',
-	clickHandler
+  type = 'search',
+  clickHandler
 }) => {
-	switch (type) {
-	case 'search':
-		return (
-			<div className="inputIcon searchIcon">
-				<SearchIcon />
-			</div>
-		);
-	case 'add':
-		return (
-			<div
-				tabIndex={0}
-				role="button"
-				onClick={clickHandler}
-				className="inputIcon addIcon"
-			>
-				<AddIcon />
-			</div>
-		);
-	case 'delete':
-		return (
-			<div
-				tabIndex={0}
-				role="button"
-				onClick={clickHandler}
-				className="inputIcon deleteIcon"
-			>
-				<RemoveIcon />
-			</div>
-		);
-	default:
-		return (
-			<div className="inputIcon searchIcon">
-				<SearchIcon />
-			</div>
-		);
-	}
+  switch (type) {
+  case 'search':
+    return (
+      <div className="inputIcon searchIcon">
+        <SearchIcon />
+      </div>
+    );
+  case 'add':
+    return (
+      <div
+        tabIndex={0}
+        role="button"
+        onClick={clickHandler}
+        className="inputIcon addIcon"
+      >
+        <AddIcon />
+      </div>
+    );
+  case 'delete':
+    return (
+      <div
+        tabIndex={0}
+        role="button"
+        onClick={clickHandler}
+        className="inputIcon deleteIcon"
+      >
+        <RemoveIcon />
+      </div>
+    );
+  default:
+    return (
+      <div className="inputIcon searchIcon">
+        <SearchIcon />
+      </div>
+    );
+  }
 };
 
 export default IconField;

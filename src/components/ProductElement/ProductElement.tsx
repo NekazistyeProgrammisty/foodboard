@@ -10,39 +10,39 @@ import { removeProduct } from '../../store/action-creators/products';
 import './ProductElement.css';
 
 type IProductElement = {
-	index: number
+  index: number
 } & IProduct
 
 const ProductElement: React.FunctionComponent<IProductElement> =
 ({
-	title, count, expirationDays, index
+  title, count, expirationDays, index
 }) => {
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	const expiresAt = `${expirationDays} д.`;
-	const [active, setActive] = React.useState<boolean>(false);
+  const expiresAt = `${expirationDays} д.`;
+  const [active, setActive] = React.useState<boolean>(false);
 
-	const removeHandler = () : void => {
-		dispatch(removeProduct(index));
-	};
+  const removeHandler = () : void => {
+    dispatch(removeProduct(index));
+  };
 
-	return (
-		<div className="product-wrapper">
-			<Modal active={active} setActive={setActive}>
-				zhopa
-			</Modal>
-			<div className="product-info" onClick={() => setActive(true)}>
-				<span>{title}</span>
-				<div className="info-right-section">
-					<span>{count}</span>
-					<span>{expiresAt}</span>
-				</div>
-			</div>
-			<div className="icon-wrapper" onClick={() => removeHandler()}>
-				<IconField type="delete" />
-			</div>
-		</div>
-	);
+  return (
+    <div className="product-wrapper">
+      <Modal active={active} setActive={setActive}>
+        zhopa
+      </Modal>
+      <div className="product-info" onClick={() => setActive(true)}>
+        <span>{title}</span>
+        <div className="info-right-section">
+          <span>{count}</span>
+          <span>{expiresAt}</span>
+        </div>
+      </div>
+      <div className="icon-wrapper" onClick={() => removeHandler()}>
+        <IconField type="delete" />
+      </div>
+    </div>
+  );
 };
 
 export default ProductElement;

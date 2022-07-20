@@ -8,30 +8,30 @@ import { IProductsState } from '../../types/ProductTypes';
 import ProductElement from '../ProductElement/ProductElement';
 
 const ProductsList: React.FunctionComponent = () => {
-	const { products, error, loading } = useTypedSelector<IProductsState>(
-		(store) => store.products
-	);
+  const { products, error, loading } = useTypedSelector<IProductsState>(
+    (store) => store.products
+  );
 
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	React.useEffect(() => {
-		if (products.length === 0) dispatch(fetchProducts());
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [dispatch]);
+  React.useEffect(() => {
+    if (products.length === 0) dispatch(fetchProducts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
-	return (
-		<>
-			{products.map((product, index) => (
-				<ProductElement
-					key={index}
-					index={index}
-					title={product.title}
-					count={product.count}
-					expirationDays={product.expirationDays}
-				/>
-			))}
-		</>
-	);
+  return (
+    <>
+      {products.map((product, index) => (
+        <ProductElement
+          key={index}
+          index={index}
+          title={product.title}
+          count={product.count}
+          expirationDays={product.expirationDays}
+        />
+      ))}
+    </>
+  );
 };
 
 export default ProductsList;

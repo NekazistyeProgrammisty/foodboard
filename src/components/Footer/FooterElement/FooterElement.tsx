@@ -20,12 +20,12 @@ const StyledFooterElement = styled(Link)`
 
 const FooterElement: React.FunctionComponent<FooterElementProps> =
 	({ text, children }) => (
-		<StyledFooterElement
-			to={`/${text.toLowerCase().replace(' ', '')}`}
-		>
-			{children}
-			<span>{text}</span>
-		</StyledFooterElement>
+  <StyledFooterElement
+  to={`/${text.toLowerCase().replace(' ', '')}`}
+  >
+  {children}
+  <span>{text}</span>
+	  </StyledFooterElement>
 	);
 
 export default FooterElement;

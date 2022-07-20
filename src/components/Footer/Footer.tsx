@@ -9,23 +9,23 @@ import { ReactComponent as Sparkles } from '../../assets/images/footer/Sparkles.
 import { ReactComponent as User } from '../../assets/images/footer/User.svg';
 
 interface IFooterProps {
-	sections: string[];
+  sections: string[];
 }
 
 const Footer: React.FC<IFooterProps> = ({ sections }) => (
-	<footer>
-		{[
-			<Sparkles />,
-			<Products />,
-			<RecipeBook />,
-			<User />,
-			<Heart />
-		].map((element, index) => (
-			<FooterElement text={sections[index]}>
-				{element}
-			</FooterElement>
-		))}
-	</footer>
+  <footer>
+    {[
+      <Sparkles />,
+      <Products />,
+      <RecipeBook />,
+      <User />,
+      <Heart />
+    ].map((element, index) => (
+      <FooterElement text={sections[index]}>
+        {element}
+      </FooterElement>
+    ))}
+  </footer>
 );
 
 export default Footer;
