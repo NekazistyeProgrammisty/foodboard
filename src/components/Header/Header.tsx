@@ -5,18 +5,28 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 
 const StyledHeader = styled.header`
-  height: 60px;
-  color: var(--txtcolor);
-  background-color: var(--primarycolor);
+  height: 70px;
   padding-left: 10px;
-  display: flex;
-  align-items: center;
+  
   font-size: 1.2rem;
   font-weight: 700;
+  color: var(--txtcolor);
+  background-color: var(--primarycolor);
+
+  display: flex;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 const locationsMap = {
-  auth: 'Авторизация'
+  auth: 'Авторизация',
+  feed: 'Новости',
+  products: 'Ваши продукты',
+  recipes: 'Книга рецептов',
+  favorite: 'Избранное'
 };
 
 export const Header: React.FC = () => {

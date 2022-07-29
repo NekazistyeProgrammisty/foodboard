@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 const MainContentWrapper = styled(Wrapper)`
-  height: calc(100% - 120px);
+  height: calc(100% - 150px);
 `;
 
 export const MainLayout: React.FC = () => (
