@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
+import { AuthPage } from '../pages/AuthPage';
 
 // TODO:
 // <Routes>
@@ -12,7 +13,7 @@ import { MainLayout } from '../layouts/MainLayout';
 export const App: React.FC = () => (
   <Routes>
     <Route path="/" element={<MainLayout />}>
-      <Route path="auth" element={<>poshel nahui</>} />
+      <Route path="auth" element={<AuthPage />} />
       <Route path="*" element={<>Нет никого дома, ты хули припёрся!</>} />
     </Route>
   </Routes>

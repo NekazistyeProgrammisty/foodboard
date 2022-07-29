@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IoIosArrowBack } from 'react-icons/io';
 
@@ -15,16 +15,35 @@ const StyledHeader = styled.header`
   font-weight: 700;
 `;
 
+const locationsMap = {
+  auth: 'Авторизация'
+};
+
 export const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  console.log(location
+    .pathname
+    .split('/')
+    .filter((item) => item !== ''));
+
   return (
     <StyledHeader>
       {
         location.pathname !== '/' &&
-          <IoIosArrowBack size="40px" onClick={(e) => navigate(-1)} />
+          <IoIosArrowBack size="40px" onClick={() => navigate(-1)} />
       }
-      <Link to="auth"> Суперкрутой хедер </Link>
+      <span>
+        {
+          locationsMap[
+            location
+              .pathname
+              .split('/')
+              .filter((item) => item !== '')[0] as keyof typeof locationsMap
+          ] || 'Foodboard'
+        }
+      </span>
     </StyledHeader>
   );
 };

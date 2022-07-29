@@ -40,22 +40,24 @@
 				"tsx": "never"
 			}
 		],
-        "no-shadow": "off",
-        "@typescript-eslint/no-shadow": ["error"],
-        "@typescript-eslint/explicit-function-return-type": [
-            "error",
-            {
-            "allowExpressions": true
-            }
-        ],
-        "max-len": ["warn", { "code": 90 }],
-        "react-hooks/rules-of-hooks": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "max-len": ["warn", { "code": 90 }],
+    "react-hooks/rules-of-hooks": "error",
 		"react/prop-types": "off",
+    "arrow-body-style": "off",
 		"react/require-default-props": "off",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
 		"operator-linebreak": [2, "after", { "overrides": { "?": "after" } }],
-		"linebreak-style": ["error", "windows"]
+		"linebreak-style": ["error", "windows"],
+    "quotes": "off"
         
 	},
 	"settings": {
