@@ -10,7 +10,6 @@ const StyledFooter = styled.footer`
 `;
 
 export const Footer: React.FC = () => {
-  console.log('12');
   return (
     <StyledFooter>
       Суперкрутой футер
