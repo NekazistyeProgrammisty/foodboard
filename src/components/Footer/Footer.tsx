@@ -30,6 +30,7 @@ const StyledFooterElement = styled.div`
   gap: 5px;
   height: 100%;
   font-size: 14px;
+  font-weight: 700;
   justify-content: center;
   align-items: center;
   color: var(--secondarycolor);

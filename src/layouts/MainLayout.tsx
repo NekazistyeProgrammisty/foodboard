@@ -6,12 +6,16 @@ import { Footer } from '../components/Footer/Footer';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
   position: relative;
 `;
 
 const MainContentWrapper = styled(Wrapper)`
-  height: calc(100% - 150px);
+  min-height: calc(100vh - 150px);
+  max-width: 100vw;
+  padding: 10px 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
 `;
 
 export const MainLayout: React.FC = () => (
