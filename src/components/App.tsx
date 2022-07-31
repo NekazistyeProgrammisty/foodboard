@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
 import { AuthPage } from '../pages/AuthPage';
+import { GridContainer } from './GridContainer/GridContainer';
 
 export const App: React.FC = () => (
   <Routes>
@@ -41,7 +42,7 @@ export const App: React.FC = () => (
           </>
         )}
       />
-      <Route path="*" element={<>Нет никого дома, ты хули припёрся!</>} />
+      <Route path="*" element={<GridContainer />} />
     </Route>
   </Routes>
 );

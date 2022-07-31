@@ -16,6 +16,9 @@ const MainContentWrapper = styled(Wrapper)`
   text-overflow: ellipsis;
   overflow: hidden;
 
+  @media screen and (max-width: 768px) {
+    padding: 10px 10px;
+  }
 `;
 
 export const MainLayout: React.FC = () => (

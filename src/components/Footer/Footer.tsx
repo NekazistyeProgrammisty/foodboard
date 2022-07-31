@@ -15,12 +15,20 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  transition: padding 0.4s ease-in;
 
   background-color: var(--primarycolor);
   color: var(--txtcolor);
 
+
+  @media screen and (min-width: 800px) {
+    padding: 0px 250px;
+  }
   @media screen and (min-width: 1024px) {
     padding: 0px 360px;
+  }
+  @media screen and (max-width: 300px) {
+    padding: 0px 2px;
   }
 `;
 
@@ -34,7 +42,7 @@ const StyledFooterElement = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--secondarycolor);
-  min-width: 58px;
+  min-width: 35px;
 `;
 
 const PizzaIcon = styled(FoodPizza)`
@@ -47,7 +55,7 @@ export const Footer: React.FC = () => {
 
       <StyledLink to="/feed">
         <StyledFooterElement>
-          <CgFeed size={32} color="#FFE8BB" />
+          <CgFeed size={32} />
           <span>Feed</span>
         </StyledFooterElement>
       </StyledLink>
@@ -61,7 +69,7 @@ export const Footer: React.FC = () => {
 
       <StyledLink to="/recipes">
         <StyledFooterElement>
-          <RecipeBook style={{ width: '32px', height: '32px' }} />
+          <RecipeBook style={{ width: '32px', height: '32px', color: 'var(--secondarycolor)' }} />
           <span>Recipes</span>
         </StyledFooterElement>
       </StyledLink>

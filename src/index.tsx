@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
       --primarycolor: #EB5252;
       --txtcolor: #FBFBFB;
       --headertxtsize: 1.5rem;
-      --secondarycolor: #FFE8BB;
+      --secondarycolor: #FED7D7;
       --buttonbg: #F6E0B5;
       --cardwidth: 11rem;
       --cardlength: 13.75rem;
