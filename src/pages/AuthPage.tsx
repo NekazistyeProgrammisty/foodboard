@@ -6,6 +6,7 @@ export const AuthPage: React.FC = () => {
   const [serverMessage, setServerMessage] = React.useState<string>('');
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     axios.get(PIZZA_API_URL)
       .then(({ data }) => setServerMessage(JSON.stringify(data)));
   }, []);
