@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as React from 'react';
-import { PIZZA_API_URL } from '../api/url';
+import { PIZZA_API_URL } from '../API/url';
 
 export const AuthPage: React.FC = () => {
   const [serverMessage, setServerMessage] = React.useState<string>('');
