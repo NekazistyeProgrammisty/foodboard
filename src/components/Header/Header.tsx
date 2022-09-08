@@ -1,24 +1,54 @@
 import * as React from 'react';
-import { IoChevronBackOutline } from 'react-icons/io5';
-import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import './Header.css';
+import { IoIosArrowBack } from 'react-icons/io';
 
-interface IHeaderProps {
-  title?: string
-}
+const StyledHeader = styled.header`
+  height: 70px;
+  padding-left: 10px;
+  
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--txtcolor);
+  background-color: var(--primarycolor);
 
-const Header: React.FC<IHeaderProps> = ({ title = 'Рецепты' }) => {
-  const navigate = useNavigate();
-  return (
-    <header>
-      <IoChevronBackOutline
-        onClick={() => navigate(-1)}
-        size={32}
-      />
-      <span className="text-logo">{title}</span>
-    </header>
-  );
+  display: flex;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+`;
+
+const locationsMap = {
+  auth: 'Авторизация',
+  feed: 'Новости',
+  products: 'Ваши продукты',
+  recipes: 'Книга рецептов',
+  favorite: 'Избранное'
 };
 
-export default Header;
+export const Header: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  return (
+    <StyledHeader>
+      {
+        location.pathname !== '/' &&
+          <IoIosArrowBack size="40px" onClick={() => navigate(-1)} />
+      }
+      <span>
+        {
+          locationsMap[
+            location
+              .pathname
+              .split('/')
+              .filter((item) => item !== '')[0] as keyof typeof locationsMap
+          ] || 'Foodboard'
+        }
+      </span>
+    </StyledHeader>
+  );
+};
