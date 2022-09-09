@@ -26,4 +26,4 @@ jobs:
       # - run: npm ci
       # - run: npm run build
       # Deploy
-      - run: cd build && scp -r ./build/* root@85.193.88.165:/root/foodboard/
+      - run: cd build && scp -r ./README.md root@85.193.88.165:/root/foodboard/
