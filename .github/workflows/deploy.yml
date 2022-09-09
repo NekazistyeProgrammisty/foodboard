@@ -26,4 +26,4 @@ jobs:
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: cd build && scp -r ./build/* username@server_ip:/var/www/85.193.88.165/html
+      - run: cd build && scp -r ./build/* root@85.193.88.165:/foodboard/
