@@ -34,4 +34,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            scp -r ./README.md root@85.193.88.165:/root/foodboard/
+            ls
