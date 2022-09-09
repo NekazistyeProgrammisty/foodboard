@@ -20,11 +20,11 @@ jobs:
       # Setup key
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
-      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
+      - run: echo "${{ secrets.PRIVATE_KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # # Build
       # - run: npm ci
       # - run: npm run build
       # Deploy
-      - run: scp -r -i $HOME/.ssh/key README.md root@85.193.88.165:/root/foodboard/
+      - run: scp -i ${{ secrets.PRIVATE_KEY }} -r README.md root@85.193.88.165:/root/foodboard/
       # - run: cd build && scp -r ./README.md root@85.193.88.165:/root/foodboard/
