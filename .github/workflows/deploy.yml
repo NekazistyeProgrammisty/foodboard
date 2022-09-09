@@ -22,8 +22,9 @@ jobs:
       - run: mkdir "$HOME/.ssh"
       - run: echo "${{ secrets.PRIVATE_KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
-      # Build
-      - run: npm ci
-      - run: npm run build
+      # # Build
+      # - run: npm ci
+      # - run: npm run build
       # Deploy
+      - run: ssh-copy-id root@85.193.88.165
       - run: cd build && scp -r ./build/* root@85.193.88.165:/foodboard/
