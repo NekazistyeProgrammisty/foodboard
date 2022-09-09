@@ -56,7 +56,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
 		"operator-linebreak": [2, "after", { "overrides": { "?": "after" } }],
-		"linebreak-style": ["error", "windows"],
+		"linebreak-style": 0,
     "quotes": "off"
         
 	},
