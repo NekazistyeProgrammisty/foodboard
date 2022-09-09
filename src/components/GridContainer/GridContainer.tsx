@@ -31,10 +31,10 @@ const StyledTestDiv = styled.div`
   filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
-export const GridContainer: React.FC<IGridContainer> = ({ children }) => {
+export const GridContainer: React.FC<IGridContainer> = () => {
   return (
     <StyledGridContainer>
-      {[...Array(20).keys()].map((elem) => {
+      {[...Array(20).keys()].map(() => {
         return <StyledTestDiv>Карточка товара</StyledTestDiv>;
       })}
     </StyledGridContainer>

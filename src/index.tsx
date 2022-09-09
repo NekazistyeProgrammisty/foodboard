@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { createGlobalStyle } from 'styled-components';

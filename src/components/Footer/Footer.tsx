@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import * as React from 'react';
 import styled from 'styled-components';
 import { CgFeed } from 'react-icons/cg';
