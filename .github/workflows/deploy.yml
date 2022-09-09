@@ -26,5 +26,11 @@ jobs:
       # - run: npm ci
       # - run: npm run build
       # Deploy
-      - run: scp -r -i $HOME/.ssh/key README.md root@85.193.88.165:/root/foodboard/
       # - run: cd build && scp -r ./README.md root@85.193.88.165:/root/foodboard/
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: cd scp -r ./README.md root@85.193.88.165:/root/foodboard/
