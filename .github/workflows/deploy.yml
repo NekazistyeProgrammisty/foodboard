@@ -26,5 +26,5 @@ jobs:
       # - run: npm ci
       # - run: npm run build
       # Deploy
-      - run: scp -i ${{ secrets.PRIVATE_KEY }} -r README.md root@85.193.88.165:/root/foodboard/
+      - run: scp -r -i ${{ secrets.PRIVATE_KEY }} README.md root@85.193.88.165:/root/foodboard/
       # - run: cd build && scp -r ./README.md root@85.193.88.165:/root/foodboard/
