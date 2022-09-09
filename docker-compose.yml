@@ -1,0 +1,11 @@
+version: '3'
+services:
+  react-client:
+    build: ./
+    ports:
+      - "3000:3001"
+    container_name: react-ui
+    stdin_open: true
+    volumes:
+       - ./my-app:/usr/src/app/my-app
+       - /usr/src/app/my-app/node_modules
