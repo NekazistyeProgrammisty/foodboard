@@ -35,4 +35,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             ls
-      - run: scp -r ./README.md root@85.193.88.165:/root/foodboard/
+      - run: ssh-copy-id root@85.193.88.165
+      # - run: scp -r ./README.md root@85.193.88.165:/root/foodboard/
