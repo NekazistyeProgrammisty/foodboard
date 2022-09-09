@@ -14,6 +14,7 @@ export const AuthPage: React.FC = () => {
   return (
     <>
       Сегодня будут кассеты мотать😶‍🌫️
+      не будут!!!!!!
       {serverMessage}
       {serverMessage}
       {serverMessage}

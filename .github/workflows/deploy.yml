@@ -33,4 +33,3 @@ jobs:
           script: |
             cd foodboard
             npm i
-            npm start
