@@ -3,7 +3,7 @@ services:
   react-client:
     build: ./
     ports:
-      - "3000:3001"
+      - "3000:3000"
     container_name: react-ui
     stdin_open: true
     volumes:
