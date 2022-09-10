@@ -23,7 +23,7 @@ const StyledHeader = styled.header`
 
 const locationsMap = {
   auth: 'Авторизация',
-  feed: 'Новости',
+  feed: 'Новости сосите хуи',
   products: 'Ваши продукты',
   recipes: 'Книга рецептов',
   favorite: 'Избранное'
