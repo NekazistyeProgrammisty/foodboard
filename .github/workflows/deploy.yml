@@ -64,6 +64,5 @@ jobs:
     needs: [setup_env, setup_key, build]
 
     steps:
-      
       - name: send build dir to server 🔥
-      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@85.193.88.165:/var/www/foodboard/
+        run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@85.193.88.165:/var/www/foodboard/
