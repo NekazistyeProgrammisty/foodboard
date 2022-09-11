@@ -20,9 +20,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: setup deploy key
         run: set -eu
-        run: mkdir "$HOME/.ssh"
-        run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
-        run: chmod 600 "$HOME/.ssh/key"
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
+      - run: chmod 600 "$HOME/.ssh/key"
         
       - name: Install dependencies 🕸
         run: npm ci
