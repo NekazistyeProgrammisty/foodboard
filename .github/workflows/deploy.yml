@@ -6,8 +6,8 @@ on:
       - dev
 
 jobs:
-  setup_env:
-    name: Setup Env 
+  build:
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,6 +22,8 @@ jobs:
         
       - name: Install dependencies 🕸
         run: npm ci
+      - name: Build project 🛠
+        run: npm run build
 
   setup_key:
     name: Setup deploy key
@@ -35,33 +37,13 @@ jobs:
       - run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
 
-
-  build:
-    name: Building App
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    needs: [setup_env, setup_key]
-
-    steps:
-    - name: Build project 🛠
-      run: npm run build
-
-    - name: Save Artifact 💿
-      uses: actions/upload-artifact@v2
-      with:
-        name: build-app
-        path: build/
-
-
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
-    needs: [setup_env, setup_key, build]
+    needs: [setup_key, build]
 
     steps:
       - name: send build dir to server 🔥
