@@ -6,36 +6,65 @@ on:
       - dev
 
 jobs:
-  Explore-GitHub-Actions:
+  setup_env:
+    name: Setup Env 
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
+
     steps:
       - uses: actions/checkout@v3
       - name: Starging Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2.1.2
         with:
           node-version: ${{ matrix.node-version }}
-      # Setup key
+        
+      - name: Install dependencies 🕸
+        run: yarn install
+
+  setup_key:
+    name: Building App
+    runs-on: self-hosted
+    steps:
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
       - run: echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
-      - run: npm ci
-      - run: npm run build
-      # Deploy
-      - run: cd ./build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@85.193.88.165:/var/www/foodboard/
-      # - name: executing remote ssh commands using password
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     script: |
-      #       cd foodboard
-      #       docker-compose down
-      #       npm i
-      #       docker-compose up -d
 
-            
+
+  build:
+    name: Building App
+    runs-on: self-hosted
+    needs: [setup_env, setup_key]
+
+    steps:
+    - name: Build project 🛠
+      run: yarn build
+
+    - name: Save Artifact 💿
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-app
+        path: build/
+
+
+  deploy:
+    name: Deploy
+    runs-on: self-hosted
+    needs: [setup_env, setup_key, build]
+
+    steps:
+    - name: Clean work path 🔥
+      run: sudo rm -r -f *
+
+    - name: Download Artifact 📀
+      uses: actions/download-artifact@v2
+      with:
+        name: build-app
+
+    - name: Clean deploy path 🔥
+      run: sudo rm -r -f /var/www/foodboard/*
+      
+    - name: Deploy 🎉
+      run: sudo mv -f * /var/www/foodboard
