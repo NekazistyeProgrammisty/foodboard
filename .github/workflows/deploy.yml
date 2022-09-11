@@ -21,11 +21,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
         
       - name: Install dependencies 🕸
-        run: yarn install
+        run: npm ci
 
   setup_key:
-    name: Building App
-    runs-on: self-hosted
+    name: Setup deploy key
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
@@ -35,7 +38,10 @@ jobs:
 
   build:
     name: Building App
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     needs: [setup_env, setup_key]
 
     steps:
@@ -51,7 +57,10 @@ jobs:
 
   deploy:
     name: Deploy
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     needs: [setup_env, setup_key, build]
 
     steps:
