@@ -46,7 +46,7 @@ jobs:
 
     steps:
     - name: Build project 🛠
-      run: yarn build
+      run: npm build
 
     - name: Save Artifact 💿
       uses: actions/upload-artifact@v2
@@ -65,15 +65,4 @@ jobs:
 
     steps:
     - name: Clean work path 🔥
-      run: sudo rm -r -f *
-
-    - name: Download Artifact 📀
-      uses: actions/download-artifact@v2
-      with:
-        name: build-app
-
-    - name: Clean deploy path 🔥
-      run: sudo rm -r -f /var/www/foodboard/*
-      
-    - name: Deploy 🎉
-      run: sudo mv -f * /var/www/foodboard
+    - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@85.193.88.165:/var/www/foodboard/
