@@ -46,7 +46,7 @@ jobs:
 
     steps:
     - name: Build project 🛠
-      run: npm build
+      run: npm run build
 
     - name: Save Artifact 💿
       uses: actions/upload-artifact@v2
