@@ -66,5 +66,4 @@ jobs:
     steps:
       
       - name: send build dir to server 🔥
-        uses: actions/checkout@v3
-        run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@85.193.88.165:/var/www/foodboard/
+      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@85.193.88.165:/var/www/foodboard/
